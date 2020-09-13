@@ -10,5 +10,8 @@
   <%= @user.full_name %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p><%= image_tag @user.photo.url(:thumb) %></p>
+
+<p><%= image_tag @user.cover_image.url(:medium) %></p>
+
 <%= link_to 'Back', users_path %>
