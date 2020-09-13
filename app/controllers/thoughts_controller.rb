@@ -1,5 +1,5 @@
 class ThoughtsController < ApplicationController
-  before_action :set_thought, only: [:show, :edit, :update, :destroy]
+  before_action :set_thought, only: %i[show edit update destroy]
 
   # GET /thoughts
   # GET /thoughts.json
@@ -9,8 +9,7 @@ class ThoughtsController < ApplicationController
 
   # GET /thoughts/1
   # GET /thoughts/1.json
-  def show
-  end
+  def show; end
 
   # GET /thoughts/new
   def new
@@ -18,8 +17,7 @@ class ThoughtsController < ApplicationController
   end
 
   # GET /thoughts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /thoughts
   # POST /thoughts.json
@@ -62,13 +60,14 @@ class ThoughtsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_thought
-      @thought = Thought.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def thought_params
-      params.require(:thought).permit(:text, :author_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_thought
+    @thought = Thought.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def thought_params
+    params.require(:thought).permit(:text, :author_id)
+  end
 end

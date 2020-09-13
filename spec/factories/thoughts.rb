@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :thought do
-    text { "MyText" }
+    text { 'MyText' }
     author { nil }
   end
 end
