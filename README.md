@@ -1,24 +1,102 @@
-# README
+# thoughtstar
+![CI Status Badge](https://github.com/Bluette1/thoughtstar/workflows/Linters/badge.svg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a capstone project at the end of the main Ruby on Rails curriculum at [Microverse](https:www.microverse.org/) - @microverseinc.
 
-Things you may want to cover:
+![demopage](./app/assets/images/screenshot.png)
+## Built With
 
-* Ruby version
+- Ruby v2.6.5
+- Ruby on Rails v5.2.4
 
-* System dependencies
+## Description
+- The original project specifications can be found [here](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718).
+- This project was about implementing a site similar to twitter where users can share their thoughts and ideas and follow other users. On thoughtstar, users share ideas for creating software applications, and how to implement them.
+  - Registered users of the app are able to follow other users; users are also able to bookmark posts from other users.
+  - A logged in user is only able to view their own posts as well as their friends' on their homepage.
 
-* Configuration
+## Live Demo
 
-* Database creation
+[Click here]()
 
-* Database initialization
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+Ruby: 2.6.3
+Rails: 5.2.3
+Postgres: >= 9.5
+
+### Setup
+
+Install gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+
+
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+```
+    bundle exec rake
+```
+
+### How to use the site
+Make sure the server is running
+- Go to http://localhost:3000/ in your web browser
+- You will be able to access the following routes (among others)
+   - http://localhost:3000/posts
+   - http://localhost:3000/users/:id
+   - http://localhost:3000/users/:id/bookmarks
+   
+- Follow the links on the site to access the available features, including sign up and sign in functionality.
+
+### Deployment
+- You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
+
+## Authors
+
+👤 **Marylene Sawyer**
+- Github: [@Bluette1](https://github.com/Bluette1)
+- Twitter: [@MaryleneSawyer](https://twitter.com/MaryleneSawyer)
+- Linkedin: [Marylene Sawyer](https://www.linkedin.com/in/marylene-sawyer)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- [Twitter - Redesign of UI details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed
