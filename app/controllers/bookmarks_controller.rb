@@ -1,4 +1,6 @@
 class BookmarksController < ApplicationController
+  def new; end
+
   def create
     @bookmark = current_user.bookmarks.new(thought_id: params[:thought_id])
 

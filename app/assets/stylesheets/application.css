@@ -1,4 +1,4 @@
-/*
+                        /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,201 @@
  *= require_tree .
  *= require_self
  */
+                        /* round images */
+                        
+                        .image {
+                            border-radius: 50%;
+                        }
+                        
+                        .image img {
+                            border-radius: 50%;
+                        }
+                        
+                        html {
+                            box-sizing: border-box;
+                        }
+                        
+                        *,
+                        *::before,
+                        *::after {
+                            box-sizing: inherit;
+                        }
+                        
+                        a:visited {
+                            color: #fff;
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                        
+                        * {
+                            border: 0 none;
+                            list-style: none outside none;
+                            margin: 0;
+                            outline: 0 none;
+                            padding: 0;
+                        }
+                        
+                        *,
+                        *::before,
+                        *::after {
+                            box-sizing: inherit;
+                        }
+                        
+                        *,
+                         ::after,
+                         ::before {
+                            box-sizing: border-box;
+                        }
+                        
+                        .page-header .center-items ul li,
+                        .page-header .right-section ul li {
+                            padding-right: 15px;
+                            padding-top: 12px;
+                            cursor: pointer;
+                        }
+                        
+                        p,
+                        ol,
+                        ul,
+                        td {
+                            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                        }
+                        
+                        * {
+                            border: 0 none;
+                            list-style: none outside none;
+                            margin: 0;
+                            outline: 0 none;
+                            padding: 0;
+                        }
+                        
+                        body {
+                            background-color: rgb(247, 242, 242);
+                            margin: 0 auto;
+                            height: 100%;
+                            width: 100%;
+                            font-size: 15px;
+                            line-height: 20px;
+                            overflow-x: hidden;
+                            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                        }
+                        
+                        a,
+                        a:visted {
+                            text-decoration: none;
+                            background-color: #209cee;
+                            color: #fff;
+                        }
+                        
+                        a:hover {
+                            text-decoration: none;
+                            background-color: #209cee;
+                            color: #fff;
+                        }
+                        
+                        .page-header {
+                            background-color: #209cee;
+                            color: #fff;
+                        }
+                        
+                        .page-header .logo-left.logo {
+                            font-weight: 700;
+                            font-size: 25px;
+                            padding-top: 25px;
+                            padding-bottom: 25px;
+                        }
+                        
+                        .page-header.right-section ul li a,
+                        .page-header .logo-left .logo {
+                            cursor: pointer;
+                        }
+                        
+                        li {
+                            font-size: 22px;
+                        }
+                        
+                        .post {
+                            font-style: italic;
+                            font-weight: bold;
+                        }
+                        
+                        .page-header .center-items ul li,
+                        .page-header .right-section ul li {
+                            padding-right: 15px;
+                            padding-top: 12px;
+                            cursor: pointer;
+                        }
+                        
+                        .dark_blue {
+                            position: sticky;
+                            z-index: 1000;
+                            background-color: rgb(5, 5, 27);
+                            height: calc(100vh - 4rem);
+                        }
+                        
+                        .fixed-top {
+                            position: fixed;
+                            top: 0;
+                            right: 0;
+                            left: 235px;
+                            z-index: 1030;
+                        }
+                        
+                        main {
+                            margin-left: 20px;
+                        }
+                        
+                        .item_color {
+                            background-color: rgb(5, 5, 27);
+                            cursor: pointer;
+                        }
+                        
+                        a.list_group_item:hover {
+                            background-color: #209cee;
+                            color: #fff;
+                        }
+                        
+                        a.item_color:hover {
+                            background-color: #209cee;
+                            color: #fff;
+                        }
+                        
+                        .list-group {
+                            margin-right: -0.9rem;
+                            font-size: 22px;
+                            padding-top: 87.5px;
+                        }
+                        
+                        .list-group-item:first-child {
+                            border-top-left-radius: 0rem;
+                            border-top-right-radius: 0rem;
+                        }
+                        
+                        .list-group-item:last-child {
+                            border-bottom-right-radius: 0rem;
+                            border-bottom-left-radius: 0rem;
+                        }
+                        
+                        .second-header a {
+                            color: #333;
+                        }
+                        
+                        .second-header a:hover {
+                            text-decoration: none;
+                            background-color: #fff;
+                        }
+                        
+                        .who-to-follow a:hover {
+                            background-color: #209cee;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                        
+                        .btn-primary {
+                            color: #fff;
+                            background-color: #209cee;
+                            border-color: #209cee;
+                        }

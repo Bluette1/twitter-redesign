@@ -4,12 +4,41 @@
     <title>Thoughtstar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh", crossorigin: "anonymous" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+  <body class='row'>
+    <div class="col-md-2 bd-sidebar dark_blue">
+      <ul class="text-left list-group pr-0">
+        <a class="pt-3 pb-3 list-group-item item_color">HOME PAGE</a>
+        <a class="pt-3 pb-3 list-group-item item_color">PROFILE</a>
+        <a class="pt-3 pb-3 list-group-item item_color">BOOKMARKS</a>
+        <a class="pt-3 pb-3 list-group-item item_color">DISCOVER</a>
+      </ul>
+    </div>
+    <div class="col-md-10 row d-flex">
+      <header class="page-header d-flex navbar justify-content-between fixed-top">
+        <div class="logo-left logo pl-4"><%= link_to 'Thought***', root_path %></div>
+        <div class="right-section">
+          <ul class="d-flex align-items-center">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to current_user.username, user_path(current_user.id) %>
+              </li>
+              <li>
+                <%= link_to "Logout", sign_out_path, method: :delete %>
+              </li>
+            <% else %>
+              <li><%= link_to "Register", sign_up_path %></li>
+              <li><%= link_to "Sign In", sign_in_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </header>
+      <main class="col-md-12 pr-n5 mr-n5">
+        <%= yield %>
+      </main>
+      <div>
+      </body>
+    </html>

@@ -1,29 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Thoughts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @thoughts.each do |thought| %>
-      <tr>
-        <td><%= thought.text %></td>
-        <td><%= thought.author_id %></td>
-        <td><%= link_to 'Show', thought %></td>
-        <td><%= link_to 'Edit', edit_thought_path(thought) %></td>
-        <td><%= link_to 'Destroy', thought, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row mt-4 pt-5 pr-n3 ">
+  <div class="col-9">
+    <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
+      
+        <ul class="d-flex align-items-center pl-0">
+          <li class="pr-3 pl-n2">
+            <%=link_to "THOUGHTS", thoughts_path %>
+          </li>
+          <li class="pr-3">
+            <%= link_to "PHOTOS", root_path, method: :delete %>
+          </li>
+          <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
+        </ul>
+      <div class="right-section">
+      </div>
+      
+    </header>
+    <%= form_for(@thought) do |form| %>
+      <%= form.label :share_an_idea %>
+      <%= form.text_field :text, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+      <% if @thought.errors.full_messages.any? %>
+        <p class="errors">
+          <%= "Post could not be saved. #{@thought.errors.full_messages.join('. ')}" %>
+        </p>
+      <% end %>
+      <br>
+      <%= form.submit 'Save', class: 'btn btn-primary' %>
+      <br>
+      <br>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Thought', new_thought_path %>
+    <% @thoughts.each do |thought| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+        <%= "@" << thought.author.username %>
+        <%= thought.author.full_name %>
+        </h5>
+        <p class="card-text">
+        <%= thought.text%>
+        </p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="col-3">
+    <ul class="who-to-follow list-group pr-0 pt-3">
+      <a class="pt-3 pb-3 list-group-item text-uppercase">Who to follow</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 1</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 2</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 3</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 4</a>
+    </ul>
+  </div>
+</div>

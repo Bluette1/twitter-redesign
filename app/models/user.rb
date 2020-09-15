@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :followings, foreign_key: :followed_id, dependent: :destroy
   has_many :followers, through: :followings, source: :follower, dependent: :destroy
 
-  has_many :thoughts, class_name: 'Thought', foreign_key: :author_id, dependent: :destroy
+  # has_many :events_created, foreign_key: :creator_id, class_name: 'Event', dependent: :destroy
+
+  has_many :thoughts, foreign_key: :author_id, class_name: 'Thought', dependent: :destroy
 
   has_many :bookmarks, dependent: :destroy
 end

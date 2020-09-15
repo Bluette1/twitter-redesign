@@ -1,9 +1,11 @@
 class ThoughtsController < ApplicationController
   before_action :set_thought, only: %i[show edit update destroy]
+  before_action :set_current_user, only: %i[show index new create]
 
   # GET /thoughts
   # GET /thoughts.json
   def index
+    @thought = Thought.new
     @thoughts = Thought.all
   end
 
@@ -11,22 +13,17 @@ class ThoughtsController < ApplicationController
   # GET /thoughts/1.json
   def show; end
 
-  # GET /thoughts/new
-  def new
-    @thought = Thought.new
-  end
-
   # GET /thoughts/1/edit
   def edit; end
 
   # POST /thoughts
   # POST /thoughts.json
   def create
-    @thought = Thought.new(thought_params)
+    @thought = @current_user.thoughts.build(thought_params)
 
     respond_to do |format|
       if @thought.save
-        format.html { redirect_to @thought, notice: 'Thought was successfully created.' }
+        format.html { redirect_to thoughts_url, notice: 'Thought was successfully created.' }
         format.json { render :show, status: :created, location: @thought }
       else
         format.html { render :new }
@@ -64,6 +61,14 @@ class ThoughtsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_thought
     @thought = Thought.find(params[:id])
+  end
+
+  def set_current_user
+    if current_user.nil?
+      session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
+      redirect_to sign_in_path
+    end
+    @current_user = current_user
   end
 
   # Only allow a list of trusted parameters through.
