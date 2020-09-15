@@ -8,7 +8,11 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show; end
+  def show
+    @thoughts = @user.thoughts
+    @followers = @user.followers.count.to_s
+    @following = @user.followed.count.to_s
+  end
 
   # GET /users/new
   def new

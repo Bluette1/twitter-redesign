@@ -1,17 +1,55 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Full name:</strong>
-  <%= @user.full_name %>
-</p>
-
-<p class='image'><%= image_tag @user.photo.url(:thumb) %></p>
-
-<p><%= image_tag @user.cover_image.url(:medium) %></p>
-
-<%= link_to 'Back', users_path %>
+  <p id="notice"><%= notice %></p>
+<div class="row mt-4 pt-5 pr-n3 ">
+  <div class="col-9">
+    <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
+      <ul class="d-flex align-items-center pl-0">
+        <li class="pr-3 pl-n2">
+          <%=link_to "THOUGHTS", thoughts_path %>
+        </li>
+        <li class="pr-3">
+          <%= link_to "PHOTOS", root_path, method: :delete %>
+        </li>
+        <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
+      </ul>
+      <div class="right-section">
+      </div>
+    </header>
+    <div class="cover_image" >
+      <%= image_tag @user.cover_image.url(:medium), height: 330, class: "w-100" %>
+    </div>
+    <% @thoughts.each do |thought| %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= "@" << thought.author.username %>
+            <%= thought.author.full_name %>
+          </h5>
+          <p class="card-text">
+            <%= thought.text%>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-3">
+    <div class="d-flex justify-content-between">
+      <div class='image pt-4'>
+        <%= image_tag @user.photo.url(:thumb) %>
+      </div>
+      <div class="pt-5 ml-n5">
+        <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
+      </div>
+    </div>
+    <p>
+    <%= @followers << ' Followers     Following ' << @following %>
+    </p>
+    <ul class="who-to-follow list-group pr-0 pt-3">
+      <a class="pt-3 pb-3 list-group-item text-uppercase">Followers</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 1</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 2</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 3</a>
+      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 4</a>
+    </ul>
+  </div>
+  <%= link_to 'Back', users_path %>
+</div>

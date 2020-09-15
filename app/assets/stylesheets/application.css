@@ -211,3 +211,12 @@
                             background-color: #209cee;
                             border-color: #209cee;
                         }
+                        
+                        .follow {
+                            color: #333
+                        }
+                        
+                        a.follow:hover {
+                            color: #fff;
+                            background-color: #209cee;
+                        }
