@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def not_bookmarked?(thought)
-    bookmarks.include?(thought) ? true:false
+    bookmarks.include?(thought) ? false : true
   end
 
   def following?(user)

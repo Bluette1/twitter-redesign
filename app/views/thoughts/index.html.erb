@@ -36,7 +36,7 @@
           <p class="card-text">
             <%= thought.text%><br/>
             <% if not_bookmarked(thought) %>
-              <%= link_to "+/bookmark", thought_bookmark_path, :method => :post %>
+              <%= button_to "+/bookmark", user_thought_path(current_user.id, thought.id), method: :patch, class: 'btn btn-secondary', type: "submit" %>
             <% end %>
           </p>
         </div>

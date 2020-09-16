@@ -204,7 +204,8 @@ a.item_color:hover {
 }
 
 .who-to-follow a,
-.who-to-follow li {
+.who-to-follow li,
+.card-text a {
     color: #333;
     cursor: pointer;
 }
@@ -242,4 +243,10 @@ a.follow:hover {
 
 .alert {
     color: #f00;
+}
+
+.card-text a:hover {
+    color: #333;
+    cursor: pointer;
+    background-color: #fff;
 }

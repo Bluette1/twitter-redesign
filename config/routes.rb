@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :thoughts, only: [:index, :create] 
   resources :users, only: %i[new create show index] do
     resources :followings, only: [:create, :destroy], controller: 'followings'
-    resources :bookmarks, only: [:create, :destroy, :index], controller: 'bookmarks'
+    resources :bookmarks, only: [:destroy, :index], controller: 'bookmarks'
+    resources :thoughts, only: [:update], controller: 'bookmarks'
   end
   get 'sign_up' => 'users#new'
   get 'sign_in'  => 'sessions#new'

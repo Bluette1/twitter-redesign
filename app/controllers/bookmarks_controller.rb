@@ -6,13 +6,13 @@ class BookmarksController < ApplicationController
     @bookmarks = current_user.bookmarks
   end
 
-  def create
-    @bookmark = current_user.bookmarks.new(thought_id: params[:thought_id])
+  def update
+    @bookmark = current_user.bookmarks.build(thought_id: params[:thought_id])
 
     if @bookmark.save
-      redirect_to bookmarks_path, notice: 'You bookmarked an idea.'
+      redirect_to user_bookmarks_path, notice: 'You bookmarked an idea.'
     else
-      redirect_to bookmarks_path, alert: 'You cannot bookmark this idea.'
+      redirect_to request.fullpath, alert: 'You cannot bookmark this idea.'
     end
   end
 
@@ -20,9 +20,9 @@ class BookmarksController < ApplicationController
     bookmark = Bookmark.find_by(id: params[:id], user: current_user, thought_id: params[:thought_id])
     if bookmark
       bookmark.destroy
-      redirect_to bookmarks_path, notice: 'You deleted a bookmark.'
+      redirect_to user_bookmarks_path, notice: 'You deleted a bookmark.'
     else
-      redirect_to bookmarks_path, alert: 'You cannot delete a bookmark that you did not bookmark before.'
+      redirect_to request.fullpath, alert: 'You cannot delete a bookmark that you did not bookmark before.'
     end
   end
 end
