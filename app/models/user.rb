@@ -18,7 +18,7 @@ class User < ApplicationRecord
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
   def not_followed
-    User.ordered_by_most_recent.reject {|user| followed_users.include?(user) || user == self}
+    User.ordered_by_most_recent.reject { |user| followed_users.include?(user) || user == self }
   end
 
   def not_bookmarked?(thought)
@@ -26,12 +26,12 @@ class User < ApplicationRecord
   end
 
   def following?(user)
-    return true if followed_users.include?(user) 
+    return true if followed_users.include?(user)
+
     false
   end
 
   def followed_users_and_own_thoughts
-    p "here##################################", Thought.where(author: (followed_users + [self]))
     Thought.where(author: (followed_users + [self]))
   end
 end

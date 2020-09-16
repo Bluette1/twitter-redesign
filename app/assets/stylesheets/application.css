@@ -14,9 +14,6 @@
  *= require_self
  */
 
-
-/* round images */
-
 .image {
   border-radius: 50%;
 }
@@ -35,40 +32,19 @@ html {
   box-sizing: inherit;
 }
 
-a:visited {
-  color: #fff;
-}
-
 a {
   text-decoration: none;
   color: #fff;
 }
 
-* {
-  border: 0 none;
-  list-style: none outside none;
-  margin: 0;
-  outline: 0 none;
-  padding: 0;
+a:visited {
+  color: #fff;
+  text-decoration: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-*,
 ::after,
 ::before {
   box-sizing: border-box;
-}
-
-.page-header .center-items ul li,
-.page-header .right-section ul li {
-  padding-right: 15px;
-  padding-top: 12px;
-  cursor: pointer;
 }
 
 p,
@@ -80,10 +56,11 @@ td {
 
 * {
   border: 0 none;
+  padding: 0;
   list-style: none outside none;
   margin: 0;
   outline: 0 none;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -95,13 +72,6 @@ body {
   line-height: 20px;
   overflow-x: hidden;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-a,
-a:visted {
-  text-decoration: none;
-  background-color: #209cee;
-  color: #fff;
 }
 
 a:hover {
@@ -122,13 +92,42 @@ a:hover {
   padding-bottom: 25px;
 }
 
-.page-header.right-section ul li a,
-.page-header .logo-left .logo {
-  cursor: pointer;
+.second-header a {
+  color: #333;
 }
 
 li {
   font-size: 22px;
+}
+
+.who-to-follow a,
+.who-to-follow li,
+.card-text a {
+  color: #333;
+  cursor: pointer;
+}
+
+.second-header a:hover,
+.who-to-follow li {
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.who-to-follow a:hover {
+  background-color: #209cee;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-text a:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.page-header.right-section ul li a,
+.page-header .logo-left .logo {
+  cursor: pointer;
 }
 
 .post {
@@ -146,15 +145,18 @@ li {
 .dark_blue {
   position: sticky;
   z-index: 1000;
-  background-color: rgb(5, 5, 27);
-  height: calc(100vh - 4rem);
+  background-color: rgb(25, 25, 54);
+  min-height: max-content;
+  height: 150vh;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
-  left: 235px;
+  left: 233px;
   z-index: 1030;
 }
 
@@ -163,7 +165,7 @@ main {
 }
 
 .item_color {
-  background-color: rgb(5, 5, 27);
+  background-color: rgb(25, 25, 54);
   cursor: pointer;
 }
 
@@ -179,7 +181,6 @@ a.item_color:hover {
 
 .list-group {
   margin-right: -0.9rem;
-  font-size: 22px;
   padding-top: 87.5px;
 }
 
@@ -191,29 +192,6 @@ a.item_color:hover {
 .list-group-item:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-}
-
-.second-header a {
-  color: #333;
-}
-
-.second-header a:hover,
-.who-to-follow li {
-  text-decoration: none;
-  background-color: #fff;
-}
-
-.who-to-follow a,
-.who-to-follow li,
-.card-text a {
-  color: #333;
-  cursor: pointer;
-}
-
-.who-to-follow a:hover {
-  background-color: #209cee;
-  color: #fff;
-  cursor: pointer;
 }
 
 .btn-primary {
@@ -244,10 +222,4 @@ a.follow:hover {
 
 .alert {
   color: #f00;
-}
-
-.card-text a:hover {
-  color: #333;
-  cursor: pointer;
-  background-color: #fff;
 }
