@@ -11,10 +11,12 @@
   <body class='row'>
     <div class="col-md-2 bd-sidebar dark_blue">
       <ul class="text-left list-group pr-0">
-        <a class="pt-3 pb-3 list-group-item item_color">HOME PAGE</a>
-        <a class="pt-3 pb-3 list-group-item item_color">PROFILE</a>
-        <a class="pt-3 pb-3 list-group-item item_color">BOOKMARKS</a>
-        <a class="pt-3 pb-3 list-group-item item_color">DISCOVER</a>
+        <%= link_to "HOME PAGE", root_path, class: "pt-3 pb-3 list-group-item item_color" %>
+        <% if user_signed_in? %>
+          <%= link_to "PROFILE", user_path(current_user.id), class: "pt-3 pb-3 list-group-item item_color" %>
+          <%= link_to "BOOKMARKS", user_bookmarks_path(current_user.id), class: "pt-3 pb-3 list-group-item item_color" %>
+        <% end %>
+        <%= link_to "DISCOVER", request.fullpath, class: "pt-3 pb-3 list-group-item item_color" %>
       </ul>
     </div>
     <div class="col-md-10 row d-flex">
@@ -36,6 +38,16 @@
           </ul>
         </div>
       </header>
+      <% if flash[:notice] %>
+        <div class="notice">
+          <p> <%= flash[:notice] %> </p>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert">
+          <p> <%= flash[:alert] %> </p>
+        </div>
+      <% end %>
       <main class="col-md-12 pr-n5 mr-n5">
         <%= yield %>
       </main>

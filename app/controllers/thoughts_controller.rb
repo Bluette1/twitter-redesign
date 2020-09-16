@@ -6,7 +6,8 @@ class ThoughtsController < ApplicationController
   # GET /thoughts.json
   def index
     @thought = Thought.new
-    @thoughts = Thought.all
+    @thoughts = @current_user.followed_users_and_own_thoughts
+    @who_to_follow = @current_user.not_followed
   end
 
   # GET /thoughts/1

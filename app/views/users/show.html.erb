@@ -1,6 +1,10 @@
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 <div class="row mt-4 pt-5 pr-n3 ">
   <div class="col-9">
+    
+    <div class="cover_image" >
+      <%= image_tag @user.cover_image.url(:medium), height: 350, class: "w-100" %>
+    </div>
     <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
       <ul class="d-flex align-items-center pl-0">
         <li class="pr-3 pl-n2">
@@ -14,9 +18,6 @@
       <div class="right-section">
       </div>
     </header>
-    <div class="cover_image" >
-      <%= image_tag @user.cover_image.url(:medium), height: 330, class: "w-100" %>
-    </div>
     <% @thoughts.each do |thought| %>
       <div class="card">
         <div class="card-body">
@@ -25,7 +26,10 @@
             <%= thought.author.full_name %>
           </h5>
           <p class="card-text">
-            <%= thought.text%>
+            <%= thought.text%><br>
+            <% if not_bookmarked(thought) %>
+              <%= link_to "+/bookmark", thought_bookmark_path, :method => :post %>
+            <% end %>
           </p>
         </div>
       </div>
@@ -36,20 +40,24 @@
       <div class='image pt-4'>
         <%= image_tag @user.photo.url(:thumb) %>
       </div>
-      <div class="pt-5 ml-n5">
-        <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
+      <div class="pt-5 follow">
+        <% unless current_user==@user || following? %>
+          <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
+        <% end %>
       </div>
     </div>
+    <%= "@#{@user.username}"%><br/>
+    <%= "#{@user.full_name}"%><br/>
+    <br/>
     <p>
-    <%= @followers << ' Followers     Following ' << @following %>
+      <%= "#{@followers_count} Followers     #{@following_count} Following" %>
     </p>
     <ul class="who-to-follow list-group pr-0 pt-3">
-      <a class="pt-3 pb-3 list-group-item text-uppercase">Followers</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 1</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 2</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 3</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 4</a>
+      <li class="pt-3 pb-3 list-group-item text-uppercase">Followers</li>
+      <% @followers.each do |user| %>
+        <%= link_to "@#{user.username} #{user.full_name}", user_path(user.id), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
+      <% end %>
     </ul>
   </div>
-  <%= link_to 'Back', users_path %>
+  <%= link_to 'Back', root_path %>
 </div>

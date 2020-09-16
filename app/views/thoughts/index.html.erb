@@ -1,19 +1,17 @@
 <div class="row mt-4 pt-5 pr-n3 ">
   <div class="col-9">
     <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
-      
-        <ul class="d-flex align-items-center pl-0">
-          <li class="pr-3 pl-n2">
-            <%=link_to "THOUGHTS", thoughts_path %>
-          </li>
-          <li class="pr-3">
-            <%= link_to "PHOTOS", root_path, method: :delete %>
-          </li>
-          <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
-        </ul>
+      <ul class="d-flex align-items-center pl-0">
+        <li class="pr-3 pl-n2">
+          <%=link_to "THOUGHTS", thoughts_path %>
+        </li>
+        <li class="pr-3">
+          <%= link_to "PHOTOS", root_path, method: :delete %>
+        </li>
+        <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
+      </ul>
       <div class="right-section">
       </div>
-      
     </header>
     <%= form_for(@thought) do |form| %>
       <%= form.label :share_an_idea %>
@@ -29,26 +27,28 @@
       <br>
     <% end %>
     <% @thoughts.each do |thought| %>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-        <%= "@" << thought.author.username %>
-        <%= thought.author.full_name %>
-        </h5>
-        <p class="card-text">
-        <%= thought.text%>
-        </p>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= "@" << thought.author.username %>
+            <%= thought.author.full_name %>
+          </h5>
+          <p class="card-text">
+            <%= thought.text%><br/>
+            <% if not_bookmarked(thought) %>
+              <%= link_to "+/bookmark", thought_bookmark_path, :method => :post %>
+            <% end %>
+          </p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
   <div class="col-3">
     <ul class="who-to-follow list-group pr-0 pt-3">
-      <a class="pt-3 pb-3 list-group-item text-uppercase">Who to follow</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 1</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 2</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 3</a>
-      <a class="pt-3 pb-3 list-group-item font-weight-bold">User 4</a>
+      <li class="pt-3 pb-3 list-group-item text-uppercase">Who to follow</li>
+      <% @who_to_follow.each do |user| %>
+        <%= link_to "@#{user.username} #{user.full_name}", user_path(user.id), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
+      <% end %>
     </ul>
   </div>
 </div>
