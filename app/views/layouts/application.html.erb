@@ -38,16 +38,6 @@
           </ul>
         </div>
       </header>
-      <% if flash[:notice] %>
-        <div class="notice">
-          <p> <%= flash[:notice] %> </p>
-        </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert">
-          <p> <%= flash[:alert] %> </p>
-        </div>
-      <% end %>
       <main class="col-md-12 pr-n5 mr-n5">
         <%= yield %>
       </main>

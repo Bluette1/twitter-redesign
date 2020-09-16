@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
-<div class="row mt-4 pt-5 pr-n3 ">
+<div class="row mt-5 pt-5 pr-n3 ">
   <div class="col-9">
-    
+    <% if flash[:notice] %>
+      <p class="notice" > <%= flash[:notice] %> </p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"> <%= flash[:alert] %> </p>
+    <% end %>
     <div class="cover_image" >
       <%= image_tag @user.cover_image.url(:medium), height: 350, class: "w-100" %>
     </div>
@@ -27,8 +31,8 @@
           </h5>
           <p class="card-text">
             <%= thought.text%><br>
-            <% if not_bookmarked(thought) %>
-              <%= button_to "+/bookmark", user_thought_path(current_user.id, thought.id), method: :patch, class: 'btn btn-secondary', type: 'submit' %>
+            <% if not_bookmarked(thought) && current_user !=@user %>
+              <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: 'submit' %>
             <% end %>
           </p>
         </div>

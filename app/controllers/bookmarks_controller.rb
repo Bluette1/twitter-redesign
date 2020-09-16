@@ -1,18 +1,21 @@
 class BookmarksController < ApplicationController
 
-  before_action :set_current_user, only: [:create, :destroy]
+  before_action :set_current_user, only: [:destroy]
+  before_action :set_current_user, only: [:create, :destroy, :index]
 
   def index
     @bookmarks = current_user.bookmarks
   end
 
-  def update
+  def create
     @bookmark = current_user.bookmarks.build(thought_id: params[:thought_id])
 
     if @bookmark.save
-      redirect_to user_bookmarks_path, notice: 'You bookmarked an idea.'
+      flash[:notice] = "You bookmarked an idea."
+      redirect_to user_bookmarks_path(current_user)
     else
-      redirect_to request.fullpath, alert: 'You cannot bookmark this idea.'
+      flash[:alert] ="You cannot bookmark this idea. #{@bookmark.errors.full_messages}"
+      redirect_to user_bookmarks_path(current_user)
     end
   end
 
@@ -20,9 +23,9 @@ class BookmarksController < ApplicationController
     bookmark = Bookmark.find_by(id: params[:id], user: current_user, thought_id: params[:thought_id])
     if bookmark
       bookmark.destroy
-      redirect_to user_bookmarks_path, notice: 'You deleted a bookmark.'
+      redirect_to user_bookmarks_path(current_user), notice: 'You deleted a bookmark.'
     else
-      redirect_to request.fullpath, alert: 'You cannot delete a bookmark that you did not bookmark before.'
+      redirect_to user_bookmarks_path(current_user), alert: 'You cannot delete a bookmark that you did not bookmark before.'
     end
   end
 end

@@ -1,5 +1,11 @@
-<div class="row mt-4 pt-5 pr-n3 ">
+<div class="row mt-5 pt-5 pr-n3 ">
   <div class="col-9">
+    <% if flash[:notice] %>
+      <p class="notice" > <%= flash[:notice] %> </p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"> <%= flash[:alert] %> </p>
+    <% end %>
     <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
       <ul class="d-flex align-items-center pl-0">
         <li class="pr-3 pl-n2">
@@ -35,10 +41,10 @@
           </h5>
           <p class="card-text">
             <%= thought.text%><br/>
-            <% if not_bookmarked(thought) %>
-              <%= button_to "+/bookmark", user_thought_path(current_user.id, thought.id), method: :patch, class: 'btn btn-secondary', type: "submit" %>
-            <% end %>
           </p>
+          <% if not_bookmarked(thought) && current_user!=thought.author  %>
+            <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: "submit" %>
+          <% end %>
         </div>
       </div>
     <% end %>

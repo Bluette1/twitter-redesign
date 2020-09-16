@@ -1,14 +1,20 @@
-<div class="row mt-5 pt-5 pr-n3 ">
+<div class="mt-5 pt-5 pr-n3 ">
+  <% if flash[:notice] %>
+    <p class="notice" > <%= flash[:notice] %> </p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p class="alert"> <%= flash[:alert] %> </p>
+  <% end %>
   <h5>List of Bookmarks</h5>
   <% @bookmarks.each do |bookmark| %>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">
-          <%= "@" << bookmark.author.username %>
-          <%= bookmark.author.full_name %>
+          <%= "@" << bookmark.thought.author.username %>
+          <%= bookmark.thought.author.full_name %>
         </h5>
         <p class="card-text">
-          <%= bookmark.text%><br>
+          <%= bookmark.thought.text%><br>
         </p>
       </div>
     </div>
