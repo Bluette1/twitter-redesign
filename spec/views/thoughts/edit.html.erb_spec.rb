@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'thoughts/edit', type: :view do
+  before { skip('This template is currently not being rendered') }
+
   before(:each) do
     @thought = assign(:thought, Thought.create!(
                                   text: 'MyText',

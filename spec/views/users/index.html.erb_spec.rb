@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'users/index', type: :view do
+  before { skip('This template is currently not being rendered') }
   before(:each) do
     assign(:users, [
              User.create!(
