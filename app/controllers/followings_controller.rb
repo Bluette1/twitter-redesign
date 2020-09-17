@@ -1,5 +1,5 @@
 class FollowingsController < ApplicationController
-  before_action :set_user, only: %i[update create destroy]
+  before_action :set_user, only: %i[create destroy]
   before_action :set_following, only: %i[destroy]
   before_action :set_current_user, only: %i[destroy create]
 
@@ -9,7 +9,7 @@ class FollowingsController < ApplicationController
     if following.save
       flash[:notice] = "You are now following #{@user.username}"
     else
-      flash[:alert] = "An error occurred while trying to follow #{@user.username} #{following.errors.full_messages}"
+      flash[:alert] = "An error occurred while trying to follow #{@user.username}"
     end
 
     redirect_to user_path(@user.id)
@@ -17,9 +17,9 @@ class FollowingsController < ApplicationController
 
   def destroy
     if @following.destroy
-      flash[:notice] = "You have successfully unfollowed #{@user.name}"
+      flash[:notice] = "You have successfully unfollowed #{@user.username}"
     else
-      flash[:alert] = "An error occurred while trying to unfollow #{@user.name} #{@user.errors.full_messages}"
+      flash[:alert] = "An error occurred while trying to unfollow #{@user.username} #{@user.errors.full_messages}"
     end
 
     redirect_to user_path(@user.id)

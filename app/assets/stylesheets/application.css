@@ -107,6 +107,12 @@ li {
   cursor: pointer;
 }
 
+.card-title a {
+  color: #333;
+  cursor: pointer;
+  background-color: #fff;
+}
+
 .second-header a:hover,
 .who-to-follow li {
   text-decoration: none;

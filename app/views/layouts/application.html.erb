@@ -10,7 +10,7 @@
   </head>
   <body class='row'>
     <div class="col-md-2 bd-sidebar dark_blue">
-      <ul class="text-left list-group pr-0">
+      <ul class="text-left list-group pr-0 h5">
         <%= link_to "HOME PAGE", root_path, class: "pt-3 pb-3 list-group-item item_color" %>
         <% if user_signed_in? %>
           <%= link_to "PROFILE", user_path(current_user.id), class: "pt-3 pb-3 list-group-item item_color" %>

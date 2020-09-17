@@ -22,7 +22,7 @@ RSpec.describe Bookmark, type: :model do
       expect(subject.errors.full_messages).to eq ['User has already been taken']
     end
   end
-  
+
   describe 'Associations' do
     it { should belong_to(:thought) }
     it { should belong_to(:user) }

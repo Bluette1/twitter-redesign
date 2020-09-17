@@ -19,15 +19,15 @@ RSpec.describe UsersController, type: :routing do
     end
 
     it 'routes to bookmarks#index' do
-        expect(get: '/users/1/bookmarks').to route_to('bookmarks#index', user_id: "1")
+      expect(get: '/users/1/bookmarks').to route_to('bookmarks#index', user_id: '1')
     end
 
     it 'routes to followings#create' do
-        expect(post: '/users/1/followings').to route_to('followings#create', user_id: "1")
+      expect(post: '/users/1/followings').to route_to('followings#create', user_id: '1')
     end
 
     it 'routes to followings#destroy' do
-        expect(delete: '/users/1/followings/1').to route_to('followings#destroy', user_id: "1", id: "1")
+      expect(delete: '/users/1/followings/1').to route_to('followings#destroy', user_id: '1', id: '1')
     end
   end
 end

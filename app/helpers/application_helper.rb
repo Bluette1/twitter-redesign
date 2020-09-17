@@ -14,4 +14,8 @@ module ApplicationHelper
   def following?
     current_user.following?(@user)
   end
+
+  def following_id(user)
+    Following.find_by(follower: current_user.id, followed: user.id).id
+  end
 end

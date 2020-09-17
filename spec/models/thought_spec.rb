@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Thought, type: :model do
   describe 'Validations' do
     let(:author) do
-        User.create(username: 'author', full_name: 'Good Author')
-      end
+      User.create(username: 'author', full_name: 'Good Author')
+    end
     let(:subject) do
       described_class.new(text: 'some text', author: author)
     end

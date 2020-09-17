@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'thoughts/index', type: :view do
-    before { skip("This still needs to be implemented") }
+  before { skip('This still needs to be implemented') }
   before(:each) do
     assign(:thoughts, [
              Thought.create!(

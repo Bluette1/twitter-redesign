@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject do
-    described_class.new(username: 'some_name', full_name: "good name")
+    described_class.new(username: 'some_name', full_name: 'good name')
   end
 
   describe 'Validations' do
@@ -23,13 +23,13 @@ RSpec.describe User, type: :model do
 
     it 'is not valid without the minimum length of username' do
       subject.username = 'd'
-      
+
       expect(subject).to_not be_valid
     end
 
     it 'is not valid without the minimum length of fullname' do
       subject.full_name = 'd'
-      
+
       expect(subject).to_not be_valid
     end
   end

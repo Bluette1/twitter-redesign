@@ -26,8 +26,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <%= "@" << thought.author.username %>
-            <%= thought.author.full_name %>
+            <%= link_to "@ #{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
           </h5>
           <p class="card-text">
             <%= thought.text%><br>
@@ -45,8 +44,11 @@
         <%= image_tag @user.photo.url(:thumb) %>
       </div>
       <div class="pt-5 follow">
-        <% unless current_user==@user || following? %>
+        <% if current_user != @user && !following? %>
           <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
+        <% elsif following? %>
+        <% following_id = following_id @user %>
+          <%= link_to '-/UnFollow', user_following_path(@user.id, following_id), :method => :delete, class: " mt-2 follow btn" %>
         <% end %>
       </div>
     </div>
