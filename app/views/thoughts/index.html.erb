@@ -36,7 +36,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <%= link_to "@ #{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
+            <%= link_to "@#{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
           </h5>
           <p class="card-text">
             <%= thought.text%><br/>

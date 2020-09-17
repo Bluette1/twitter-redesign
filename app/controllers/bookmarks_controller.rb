@@ -18,7 +18,7 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    bookmark = Bookmark.find_by(id: params[:id], user: current_user, thought_id: params[:thought_id])
+    bookmark = Bookmark.find_by(id: params[:id], user: current_user)
     if bookmark
       bookmark.destroy
       redirect_to user_bookmarks_path(current_user), notice: 'You deleted a bookmark.'

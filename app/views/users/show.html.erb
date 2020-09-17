@@ -26,11 +26,11 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <%= link_to "@ #{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
+            <%= link_to "@#{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
           </h5>
           <p class="card-text">
             <%= thought.text%><br>
-            <% if not_bookmarked(thought) && current_user !=@user %>
+            <% if not_bookmarked(thought) && current_user != @user %>
               <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: 'submit' %>
             <% end %>
           </p>
@@ -48,7 +48,7 @@
           <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
         <% elsif following? %>
         <% following_id = following_id @user %>
-          <%= link_to '-/UnFollow', user_following_path(@user.id, following_id), :method => :delete, class: " mt-2 follow btn" %>
+          <%= link_to '-/Unfollow', user_following_path(@user.id, following_id), :method => :delete, class: " mt-2 follow btn" %>
         <% end %>
       </div>
     </div>

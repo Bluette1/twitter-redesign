@@ -15,6 +15,7 @@
         </h5>
         <p class="card-text">
           <%= bookmark.thought.text%><br>
+          <%= button_to "-/unbookmark", user_bookmark_path(current_user.id, bookmark.id), method: :delete, class: 'btn btn-primary', type: 'submit' %>
         </p>
       </div>
     </div>
