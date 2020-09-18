@@ -3,7 +3,7 @@ module ThoughtsHelper
     @thought
   end
 
-  def author_details thought
+  def author_details(thought)
     "@#{author(thought).username} #{author(thought).full_name}"
   end
 end

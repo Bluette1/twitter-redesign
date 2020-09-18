@@ -59,7 +59,7 @@ module ApplicationHelper
     thought.id
   end
 
-  def user_or_author_details thought
+  def user_or_author_details(thought)
     user = @user || author(thought)
     link_to user_details(user), user_path(user)
   end
