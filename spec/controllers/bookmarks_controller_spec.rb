@@ -28,7 +28,7 @@ RSpec.describe BookmarksController, type: :controller do
 
   describe 'DELETE destroy ' do
     let(:bookmark) { Bookmark.create(thought: @thought, user: @user) }
-    subject { delete :destroy, params: {user_id: @user.id, id: bookmark.id} }
+    subject { delete :destroy, params: { user_id: @user.id, id: bookmark.id } }
 
     it 'redirects to the action show' do
       expect(subject).to redirect_to(user_bookmarks_url(@user.id))
@@ -38,7 +38,7 @@ RSpec.describe BookmarksController, type: :controller do
     end
 
     it 'sets the correct flash notice' do
-      delete :destroy, params: {user_id: @user.id, id: bookmark.id}
+      delete :destroy, params: { user_id: @user.id, id: bookmark.id }
       expect(response.code).to eq '302'
       expect(response).to have_http_status(:found)
       expect(flash[:notice]).to eq 'You deleted a bookmark.'
@@ -51,17 +51,17 @@ RSpec.describe BookmarksController, type: :controller do
     end
 
     it 'returns a successful response' do
-      get :index, params: {user_id: @user.id}
+      get :index, params: { user_id: @user.id }
       expect(response).to be_successful
     end
 
     it 'assigns @bookmarks' do
-      get :index, params: {user_id: @user.id}
+      get :index, params: { user_id: @user.id }
       expect(assigns(:bookmarks)).to eq([@bookmark])
     end
 
     it 'renders the index template' do
-      get :index, params: {user_id: @user.id}
+      get :index, params: { user_id: @user.id }
       expect(response).to render_template('index')
     end
   end
