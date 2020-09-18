@@ -6,18 +6,5 @@
     <p class="alert"> <%= flash[:alert] %> </p>
   <% end %>
   <h5>List of Bookmarks</h5>
-  <% @bookmarks.each do |bookmark| %>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= "@" << bookmark.thought.author.username %>
-          <%= bookmark.thought.author.full_name %>
-        </h5>
-        <p class="card-text">
-          <%= bookmark.thought.text%><br>
-          <%= button_to "-/unbookmark", user_bookmark_path(current_user.id, bookmark.id), method: :delete, class: 'btn btn-primary', type: 'submit' %>
-        </p>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'bookmarks' %>
 </div>

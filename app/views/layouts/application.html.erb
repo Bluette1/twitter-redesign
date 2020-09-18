@@ -12,10 +12,7 @@
     <div class="col-md-2 bd-sidebar dark_blue">
       <ul class="text-left list-group pr-0 h5">
         <%= link_to "HOME PAGE", root_path, class: "pt-3 pb-3 list-group-item item_color" %>
-        <% if user_signed_in? %>
-          <%= link_to "PROFILE", user_path(current_user.id), class: "pt-3 pb-3 list-group-item item_color" %>
-          <%= link_to "BOOKMARKS", user_bookmarks_path(current_user.id), class: "pt-3 pb-3 list-group-item item_color" %>
-        <% end %>
+        <%= logged_in_usr %>
         <%= link_to "DISCOVER", request.fullpath, class: "pt-3 pb-3 list-group-item item_color" %>
       </ul>
     </div>
@@ -24,17 +21,7 @@
         <div class="logo-left logo pl-4 h5"><%= link_to '* Thoughtstar', root_path %></div>
         <div class="right-section h5">
           <ul class="d-flex">
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to current_user.username, user_path(current_user.id) %>
-              </li>
-              <li>
-                <%= link_to "Logout", sign_out_path, method: :delete %>
-              </li>
-            <% else %>
-              <li><%= link_to "Sign Up", sign_up_path %></li>
-              <li><%= link_to "Sign In", sign_in_path %></li>
-            <% end %>
+            <%= sign_in_and_sign_out %>
           </ul>
         </div>
       </header>

@@ -1,0 +1,13 @@
+   <% @thoughts.each do |thought| %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= user_or_author_details thought %>
+          </h5>
+          <p class="card-text">
+            <%= thought.text%><br>
+            <%= bookmark_btn thought %>
+          </p>
+        </div>
+      </div>
+    <% end %>

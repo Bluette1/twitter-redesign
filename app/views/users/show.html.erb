@@ -7,7 +7,7 @@
       <p class="alert"> <%= flash[:alert] %> </p>
     <% end %>
     <div class="cover_image" >
-      <%= image_tag @user.cover_image.url(:medium), height: 350, class: "w-100" %>
+      <%= image_tag cover_image, height: 350, class: "w-100" %>
     </div>
     <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
       <ul class="d-flex align-items-center pl-0">
@@ -22,47 +22,26 @@
       <div class="right-section">
       </div>
     </header>
-    <% @thoughts.each do |thought| %>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= link_to "@#{@user.username} #{@user.full_name}", user_path(@user) %>
-          </h5>
-          <p class="card-text">
-            <%= thought.text%><br>
-            <% if not_bookmarked(thought) && current_user != @user %>
-              <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: 'submit' %>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+ <%= render 'users/thoughts' %>
   </div>
   <div class="col-3">
     <div class="d-flex justify-content-between">
       <div class='image pt-4'>
-        <%= image_tag @user.photo.url(:thumb) %>
+        <%= image_tag retrieve_image %>
       </div>
       <div class="pt-5 follow">
-        <% if current_user != @user && !following? %>
-          <%= link_to '+/Follow', user_followings_path(@user.id), :method => :post, class: " mt-2 follow btn" %>
-        <% elsif following? %>
-        <% following_id = following_id @user %>
-          <%= link_to '-/Unfollow', user_following_path(@user.id, following_id), :method => :delete, class: " mt-2 follow btn" %>
-        <% end %>
+        <%= follow_or_unfollow_btn %>
       </div>
     </div>
-    <%= "@#{@user.username}"%><br/>
-    <%= "#{@user.full_name}"%><br/>
+    <%= username %><br/>
+    <%= full_name %><br/>
     <br/>
     <p>
-      <%= "#{@followers_count} Followers     #{@following_count} Following" %>
+      <%= followers_and_following_count %>
     </p>
     <ul class="who-to-follow list-group pr-0 pt-3">
       <li class="pt-3 pb-3 list-group-item text-uppercase">Followers</li>
-      <% @followers.each do |user| %>
-        <%= link_to "@#{user.username} #{user.full_name}", user_path(user.id), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
-      <% end %>
+      <%= render 'followers' %>
     </ul>
   </div>
   <%= link_to 'Back', root_path %>

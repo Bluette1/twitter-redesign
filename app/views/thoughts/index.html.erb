@@ -19,40 +19,22 @@
       <div class="right-section">
       </div>
     </header>
-    <%= form_for(@thought) do |form| %>
+    <%= form_for(thought) do |form| %>
       <%= form.label :share_an_idea %>
       <%= form.text_field :text, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
-      <% if @thought.errors.full_messages.any? %>
-        <p class="errors">
-          <%= "Post could not be saved. #{@thought.errors.full_messages.join('. ')}" %>
-        </p>
-      <% end %>
+      <%= retrieve_errors thought %>
       <br>
       <%= form.submit 'Save', class: 'btn btn-primary' %>
       <br>
       <br>
     <% end %>
-    <% @thoughts.each do |thought| %>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= link_to "@#{thought.author.username} #{thought.author.full_name}", user_path(thought.author) %>
-          </h5>
-          <p class="card-text">
-            <%= thought.text%><br/>
-          </p>
-          <% if not_bookmarked(thought) && current_user != thought.author  %>
-            <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: "submit" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'users/thoughts' %>
   </div>
   <div class="col-3">
     <ul class="who-to-follow list-group pr-0 pt-3">
       <li class="pt-3 pb-3 list-group-item text-uppercase">Who to follow</li>
       <% @who_to_follow.each do |user| %>
-        <%= link_to "@#{user.username} #{user.full_name}", user_path(user.id), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
+        <%= link_to user_details(user), user_path(usr_id(user)), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
       <% end %>
     </ul>
   </div>

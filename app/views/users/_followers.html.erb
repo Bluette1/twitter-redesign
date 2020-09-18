@@ -1,0 +1,3 @@
+<% followers.each do |user| %>
+  <%= link_to user_details(user), user_path(usr_id(user)), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
+<% end %>
