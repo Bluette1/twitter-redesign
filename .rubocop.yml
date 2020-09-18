@@ -1,5 +1,4 @@
 AllCops:
-  NewCops: enable
   Exclude:
     - "db/**/*"
     - "bin/*" 
@@ -10,7 +9,7 @@ AllCops:
     - "node_modules/**/*"
 
   DisplayCopNames: true
-
+  NewCops: enable
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
