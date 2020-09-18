@@ -13,7 +13,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 - The original project specifications can be found [here](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718).
 - This project was about implementing a site similar to twitter where users can share their thoughts and ideas and follow other users. On thoughtstar, users share ideas for creating software applications, and how to implement them.
   - Registered users of the app are able to follow other users; users are also able to bookmark ideas from other users.
-  - A logged in user is only able to view their own ideas as well as their friends' on their homepage.
+  - A logged-in user is only able to view their own ideas as well as those of other users that they are following on their homepage.
 
 ## Live Demo
 
