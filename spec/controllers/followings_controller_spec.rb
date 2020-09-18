@@ -9,7 +9,7 @@ RSpec.describe FollowingsController, type: :controller do
   end
 
   describe 'POST create ' do
-    subject { post :create, params: { user_id: @followed.id} }
+    subject { post :create, params: { user_id: @followed.id } }
 
     it 'redirects to the action index' do
       expect(subject).to redirect_to(user_url(@followed.id))
@@ -19,7 +19,7 @@ RSpec.describe FollowingsController, type: :controller do
     end
 
     it 'sets the correct flash notice' do
-      post :create, params: {user_id: @followed.id}
+      post :create, params: { user_id: @followed.id }
       expect(response.code).to eq '302'
       expect(response).to have_http_status(:found)
       expect(flash[:notice]).to eq "You are now following #{@followed.username}"
@@ -28,7 +28,7 @@ RSpec.describe FollowingsController, type: :controller do
 
   describe 'DELETE destroy ' do
     let(:following) { Following.create(follower: @follower, followed: @followed) }
-    subject { delete :destroy, params: {user_id: @followed.id, id: following.id} }
+    subject { delete :destroy, params: { user_id: @followed.id, id: following.id } }
 
     it 'redirects to the action show' do
       expect(subject).to redirect_to(user_url(@followed.id))
@@ -38,7 +38,7 @@ RSpec.describe FollowingsController, type: :controller do
     end
 
     it 'sets the correct flash notice' do
-      delete :destroy, params: {user_id: @followed.id, id: following.id}
+      delete :destroy, params: { user_id: @followed.id, id: following.id }
       expect(response.code).to eq '302'
       expect(response).to have_http_status(:found)
       expect(flash[:notice]).to eq "You have successfully unfollowed #{@followed.username}"

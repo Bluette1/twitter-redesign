@@ -3,7 +3,7 @@ require 'support/authentication_helper'
 
 RSpec.describe UsersController, type: :controller do
   describe 'POST create ' do
-    subject { post :create, params: { user: {username: 'username', full_name: 'full name' } } }
+    subject { post :create, params: { user: { username: 'username', full_name: 'full name' } } }
 
     it 'redirects to the action show' do
       expect(subject).to redirect_to(assigns(:user))
