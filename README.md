@@ -75,8 +75,10 @@ Make sure the server is running
 - Follow the links on the site to access the available features, including sign up and sign in functionality.
 #### Available features
 - A user who is logged in can
+   - post their thoughts and ideas on their timeline/home page
    - follow another user
    - unfollow and refollow another user
+   - view their own ideas as well as their friends' on their homepage.
    - bookmark another user's thought(s) on their *home page*
    - bookmark another user's thought(s) on their *user profile page*
    - remove a bookmark from their bookmarks page
