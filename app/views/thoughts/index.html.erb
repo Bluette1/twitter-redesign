@@ -41,7 +41,7 @@
           <p class="card-text">
             <%= thought.text%><br/>
           </p>
-          <% if not_bookmarked(thought) && current_user!=thought.author  %>
+          <% if not_bookmarked(thought) && current_user != thought.author  %>
             <%= button_to "+/bookmark", thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: "submit" %>
           <% end %>
         </div>

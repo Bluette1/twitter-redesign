@@ -32,6 +32,6 @@ class User < ApplicationRecord
   end
 
   def followed_users_and_own_thoughts
-    Thought.where(author: (followed_users + [self]))
+    Thought.where(author: (followed_users + [self])).includes(:author)
   end
 end
