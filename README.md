@@ -12,12 +12,12 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 ## Description
 - The original project specifications can be found [here](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718).
 - This project was about implementing a site similar to twitter where users can share their thoughts and ideas and follow other users. On thoughtstar, users share ideas for creating software applications, and how to implement them.
-  - Registered users of the app are able to follow other users; users are also able to bookmark posts from other users.
-  - A logged in user is only able to view their own posts as well as their friends' on their homepage.
+  - Registered users of the app are able to follow other users; users are also able to bookmark ideas from other users.
+  - A logged in user is only able to view their own ideas as well as their friends' on their homepage.
 
 ## Live Demo
 
-[Click here]()
+[Click here](https://thoughtstar-app.herokuapp.com/)
 
 
 ## Getting Started
@@ -67,11 +67,19 @@ Open `http://localhost:3000/` in your browser.
 Make sure the server is running
 - Go to http://localhost:3000/ in your web browser
 - You will be able to access the following routes (among others)
-   - http://localhost:3000/posts
+   - http://localhost:3000/
+   - http://localhost:3000/thoughts/:id
    - http://localhost:3000/users/:id
-   - http://localhost:3000/users/:id/bookmarks
+   - http://localhost:3000/users/:user_id/bookmarks
    
 - Follow the links on the site to access the available features, including sign up and sign in functionality.
+#### Available features
+- A user who is logged in can
+   - follow another user
+   - unfollow and refollow another user
+   - bookmark another user's thought(s) on their *home page*
+   - bookmark another user's thought(s) on their *user profile page*
+   - remove a bookmark from their bookmarks page
 
 ### Deployment
 - You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
@@ -87,7 +95,7 @@ Make sure the server is running
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Bluette1/thoughtstar/issues).
 
 ## Show your support
 
