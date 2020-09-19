@@ -1,9 +1,11 @@
 class BookmarksController < ApplicationController
+  include BookmarksHelper
   before_action :set_current_user, only: [:destroy]
   before_action :set_current_user, only: %i[create destroy index]
 
   def index
     @bookmarks = current_user.bookmarks
+    @trends = trends 
   end
 
   def create

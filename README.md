@@ -60,7 +60,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    bundle exec rake
+    rspec
 ```
 
 ### How to use the site

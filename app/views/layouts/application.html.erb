@@ -13,12 +13,12 @@
       <ul class="text-left list-group pr-0 h5">
         <%= link_to "HOME PAGE", root_path, class: "pt-3 pb-3 list-group-item item_color" %>
         <%= logged_in_usr %>
-        <%= link_to "DISCOVER", request.fullpath, class: "pt-3 pb-3 list-group-item item_color" %>
+        <%= link_to "DISCOVER", trends_path, class: "pt-3 pb-3 list-group-item item_color" %>
       </ul>
     </div>
     <div class="col-md-10 row d-flex">
       <header class="page-header d-flex navbar justify-content-between fixed-top">
-        <div class="logo-left logo pl-4 h5"><%= link_to '* Thoughtstar', root_path %></div>
+        <div class="logo-left logo pl-4 h5"><%= link_to '*Thoughtstar', root_path %></div>
         <div class="right-section h5">
           <ul class="d-flex">
             <%= sign_in_and_sign_out %>
