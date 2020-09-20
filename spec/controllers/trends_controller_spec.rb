@@ -8,7 +8,6 @@ RSpec.describe TrendsController, type: :controller do
   end
 
   describe 'GET index ' do
-
     it 'returns a successful response' do
       get :index
       expect(response).to be_successful
