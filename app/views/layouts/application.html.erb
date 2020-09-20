@@ -27,10 +27,12 @@
       </ul>
     </div>
     <div class="col-md-10 row d-flex">
-      <header class="page-header d-flex navbar justify-content-between fixed-top">
-        <div class="logo-left logo pl-4 h5"><%= link_to '*Thoughtstar', root_path %></div>
+      <header class="page-header d-flex align-items-center justify-content-between fixed-top">
+        <div class="logo-left logo pl-4 h5">
+          <%= logo_options %>
+        </div>
         <div class="right-section h5">
-          <ul class="d-flex">
+          <ul class="d-flex align-items-center pt-4">
             <%= sign_in_and_sign_out %>
           </ul>
         </div>

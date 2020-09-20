@@ -31,6 +31,15 @@ module ApplicationHelper
     end
   end
 
+  def logo_options
+    if user_signed_in?
+      render 'layouts/logo_star'
+    else
+      render 'layouts/thoughtstar_logo'
+    end
+  end
+
+
   def retrieve_errors(thought)
     render 'thoughts/errors' if thought.errors.full_messages.any?
   end
