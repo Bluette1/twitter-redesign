@@ -156,12 +156,11 @@ li a.sign-in-options {
 .dark_blue {
   position: sticky;
   z-index: 1000;
-  background-color: #35465C;
+  background-color: #35465c;
   min-height: max-content;
   height: 150vh;
   overflow-x: hidden;
   padding-top: 20px;
-  
 }
 
 .fixed-top {
@@ -172,19 +171,18 @@ li a.sign-in-options {
   z-index: 1030;
 }
 
-
 main {
   margin-left: 20px;
 }
 
 .item_color {
-  background-color: #35465C;
+  background-color: #35465c;
   color: #7389a5;
   cursor: pointer;
   text-decoration: none;
 }
 
- a.item-text {
+a.item-text {
   background-color: inherit;
   color: inherit;
   cursor: pointer;
@@ -195,7 +193,6 @@ a.list_group_item:hover {
   background-color: #209cee;
   color: #fff;
 }
-
 
 .list-group {
   margin-right: -0.9rem;
@@ -255,10 +252,12 @@ a.back-link:hover {
   background-color: #fff;
 }
 
-li.item_color:hover, .item_color a:hover {
+li.item_color:hover,
+.item_color a:hover {
   background-color: #209cee;
   color: #fff;
 }
+
 .page-header .dropdown-menu a {
   color: #333;
   font-size: 13px;
@@ -266,12 +265,12 @@ li.item_color:hover, .item_color a:hover {
 
 .page-header .dropdown-menu a:hover {
   color: #333;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .nav-icons {
   cursor: pointer;
-  color: #35465C;
+  color: #35465c;
 }
 
 .nav-icons:hover {
@@ -280,7 +279,11 @@ li.item_color:hover, .item_color a:hover {
   color: #fff;
 }
 
-.show>.btn-primary.dropdown-toggle {
-  background-color: #35465C;;
-  border-color: #35465C;;
+.show > .btn-primary.dropdown-toggle {
+  background-color: #35465c;
+  border-color: #35465c;
+}
+
+div.card {
+  margin-left: -135px;
 }

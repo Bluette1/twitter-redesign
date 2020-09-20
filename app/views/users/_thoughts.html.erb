@@ -1,13 +1,18 @@
-   <% @thoughts.each do |thought| %>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= user_or_author_details thought %>
-          </h5>
-          <p class="card-text">
-            <%= thought.text%><br>
-            <%= bookmark_btn thought %>
-          </p>
-        </div>
+<% @thoughts.each do |thought| %>
+  <div class="row">
+    <div class="image col-3">
+      <%= image_tag(user_or_author_img(thought), size: 64) %>
+    </div>
+    <div class="card col-9">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= user_or_author_details thought %>
+        </h5>
+        <p class="card-text">
+          <%= thought.text %><br>
+          <%= bookmark_btn thought %>
+        </p>
       </div>
-    <% end %>
+    </div>
+  </div>
+<% end %>

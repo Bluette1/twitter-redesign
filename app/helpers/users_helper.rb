@@ -3,7 +3,7 @@ module UsersHelper
     @user
   end
 
-  def retrieve_image
+  def retrieve_image(user = @user)
     user.photo.url(:thumb)
   end
 

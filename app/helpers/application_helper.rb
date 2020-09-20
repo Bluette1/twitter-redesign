@@ -39,7 +39,6 @@ module ApplicationHelper
     end
   end
 
-
   def retrieve_errors(thought)
     render 'thoughts/errors' if thought.errors.full_messages.any?
   end
@@ -71,5 +70,14 @@ module ApplicationHelper
   def user_or_author_details(thought)
     user = @user || author(thought)
     link_to user_details(user), user_path(user)
+  end
+
+  def user_or_author_img(thought)
+    user = @user || author(thought)
+    avatar_url(user)
+  end
+
+  def avatar_url(user)
+    user.photo.url(:thumb)
   end
 end

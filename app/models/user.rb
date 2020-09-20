@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_attached_file :photo, styles: { medium: '300x300>', thumb: '100x100>' }
+  has_attached_file :photo, styles: { medium: '300x300>', thumb: '100x100>' }, :default_url => ":style/avatar.png"
   has_attached_file :cover_image, styles: { medium: '800x800>', thumb: '100x100>' }
   validates_attachment_content_type :photo, content_type: ['image/jpg', 'image/jpeg', 'image/png']
   validates :username, presence: true, length: { minimum: 2 }, uniqueness: true

@@ -15,7 +15,7 @@
   <div class="col-3">
     <div class="d-flex justify-content-between">
       <div class='image pt-4'>
-        <%= image_tag retrieve_image %>
+        <%= image_tag(retrieve_image, size: 100, alt: username) %>
       </div>
       <div class="pt-5 follow">
         <%= follow_or_unfollow_btn %>
