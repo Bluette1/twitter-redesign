@@ -6,10 +6,9 @@ class TrendsController < ApplicationController
 
   # GET /trends
   def index
-    @trends = trends 
-    @who_to_follow = @current_user.not_followed 
+    @trends = trends
+    @who_to_follow = @current_user.not_followed
   end
-
 end
 
 private

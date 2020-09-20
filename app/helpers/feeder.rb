@@ -17,7 +17,7 @@ class Feeder
   end
 
   def send_feed
-        check_news
+    check_news
   end
 
   private
@@ -32,9 +32,8 @@ class Feeder
           title = item.title
           news[title.to_sym] = item.link
         end
-     
-          send_to_users(news, channel)
-    
+
+        send_to_users(news, channel)
       end
     end
 
@@ -42,11 +41,9 @@ class Feeder
   end
 
   def send_to_users(news, channel)
-    
     choice = rand(5)
     news_item = choose_news_item choice, news, channel
     send_rss news_item
-   
   end
 
   def choose_news_item(choice, news, channel)
@@ -66,11 +63,6 @@ class Feeder
   end
 
   def send_rss(news_item)
-    channel = news_item[:channel]
-    title = news_item[:title]
-    link = news_item[:link]
-
     @feeds << news_item
-
   end
 end
