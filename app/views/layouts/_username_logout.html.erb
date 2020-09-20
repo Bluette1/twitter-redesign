@@ -1,7 +1,13 @@
-  
-<li>
-  <%= link_to current_user.username, user_path(current_user.id) %>
-</li>
-<li>
-  <%= link_to "Logout", sign_out_path, method: :delete %>
-</li>
+<div class="dropdown pr-5">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-cog"></i>
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to current_user.username, user_path(current_user.id) %>
+    </li>
+    <li>
+      <%= link_to "Logout", sign_out_path, method: :delete %>
+    </li>
+  </ul>
+</div>

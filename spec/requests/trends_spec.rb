@@ -16,7 +16,7 @@ RSpec.describe '/trends', type: :request do
   let(:mary) do
     { username: 'mary_s', full_name: 'mary s' }
   end
-  before(:each) do
+  before do
     post users_url, params: { user: mary }
   end
 

@@ -8,7 +8,7 @@ RSpec.describe 'trends/index', type: :view do
     { username: 'jane_s', full_name: 'jane s' }
   end
 
-  before(:each) do
+  before do
     assign(:trends, [
              { channel: 'channel', title: 'title', link: 'link' },
              { channel: 'other channel', title: 'other title', link: 'other link' }
