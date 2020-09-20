@@ -85,16 +85,8 @@ a:hover {
   font-size: 25px;
 }
 
-.logo-left.logo a {
-  color: #fff;
-}
-
 .second-header a {
   color: #333;
-}
-
-.page-header li {
-  font-size: 22px;
 }
 
 .who-to-follow a,
@@ -110,6 +102,14 @@ a:hover {
   color: #333;
   cursor: pointer;
   background-color: #fff;
+}
+
+.logo-left.logo a {
+  color: #fff;
+}
+
+.page-header li {
+  font-size: 22px;
 }
 
 .second-header a:hover,
@@ -130,6 +130,17 @@ a:hover {
   color: #333;
   cursor: pointer;
   background-color: #fff;
+}
+
+li.item_color:hover,
+.item_color a:hover {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.page-header .dropdown-menu a {
+  color: #333;
+  font-size: 13px;
 }
 
 .page-header.right-section ul li a,
@@ -252,17 +263,6 @@ a.back-link:hover {
   background-color: #fff;
 }
 
-li.item_color:hover,
-.item_color a:hover {
-  background-color: #209cee;
-  color: #fff;
-}
-
-.page-header .dropdown-menu a {
-  color: #333;
-  font-size: 13px;
-}
-
 .page-header .dropdown-menu a:hover {
   color: #333;
   background-color: #fff;
@@ -284,6 +284,6 @@ li.item_color:hover,
   border-color: #35465c;
 }
 
-div.card {
+.thoughts {
   margin-left: -135px;
 }
