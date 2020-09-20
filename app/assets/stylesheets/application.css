@@ -101,6 +101,8 @@ li {
 }
 
 .who-to-follow a,
+.trends a,
+.followers a,
 .who-to-follow li,
 .card-text a {
   color: #333;
@@ -119,7 +121,9 @@ li {
   background-color: #fff;
 }
 
-.who-to-follow a:hover {
+.who-to-follow a:hover,
+.trends a:hover,
+.followers a:hover {
   background-color: #209cee;
   color: #fff;
   cursor: pointer;
@@ -234,3 +238,11 @@ a.trends {
   color: #333;
 }
 
+a.back-link {
+  color: #333;
+}
+
+a.back-link:hover {
+  color: #333;
+  background-color: #fff;
+}

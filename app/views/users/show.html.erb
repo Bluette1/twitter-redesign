@@ -9,20 +9,8 @@
     <div class="cover_image" >
       <%= image_tag cover_image, height: 350, class: "w-100" %>
     </div>
-    <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
-      <ul class="d-flex align-items-center pl-0">
-        <li class="pr-3 pl-n2">
-          <%=link_to "THOUGHTS", thoughts_path %>
-        </li>
-        <li class="pr-3">
-          <%= link_to "PHOTOS", root_path, method: :delete %>
-        </li>
-        <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
-      </ul>
-      <div class="right-section">
-      </div>
-    </header>
- <%= render 'users/thoughts' %>
+    <%= render 'layouts/header' %>
+    <%= render 'users/thoughts' %>
   </div>
   <div class="col-3">
     <div class="d-flex justify-content-between">
@@ -39,10 +27,9 @@
     <p>
       <%= followers_and_following_count %>
     </p>
-    <ul class="who-to-follow list-group pr-0 pt-3">
+    <ul class="followers list-group pr-0 pt-3">
       <li class="pt-3 pb-3 list-group-item text-uppercase">Followers</li>
       <%= render 'followers' %>
     </ul>
   </div>
-  <%= link_to 'Back', root_path %>
 </div>

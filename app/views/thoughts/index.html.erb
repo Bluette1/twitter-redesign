@@ -6,19 +6,7 @@
     <% if flash[:alert] %>
       <p class="alert"> <%= flash[:alert] %> </p>
     <% end %>
-    <header class= "second-header d-flex navbar justify-content-between pt-3 mt-3 pl-0">
-      <ul class="d-flex align-items-center pl-0">
-        <li class="pr-3 pl-n2">
-          <%=link_to "THOUGHTS", thoughts_path %>
-        </li>
-        <li class="pr-3">
-          <%= link_to "PHOTOS", root_path, method: :delete %>
-        </li>
-        <li class="pr-3"><%= link_to "VIDEOS",root_path %></li>
-      </ul>
-      <div class="right-section">
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
     <%= form_for(thought) do |form| %>
       <%= form.label :share_an_idea %>
       <%= form.text_field :text, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
@@ -31,11 +19,6 @@
     <%= render 'users/thoughts' %>
   </div>
   <div class="col-3">
-    <ul class="who-to-follow list-group pr-0 pt-3">
-      <li class="pt-3 pb-3 list-group-item text-uppercase">Who to follow</li>
-      <% @who_to_follow.each do |user| %>
-        <%= link_to user_details(user), user_path(usr_id(user)), class: "pt-3 pb-3 list-group-item font-weight-bold" %>
-      <% end %>
-    </ul>
+    <%= render 'layouts/who_to_follow'%>
   </div>
 </div>
