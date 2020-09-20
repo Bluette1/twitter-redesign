@@ -89,21 +89,6 @@ a:hover {
   color: #333;
 }
 
-.who-to-follow a,
-.trends a,
-.followers a,
-.who-to-follow li,
-.card-text a {
-  color: #333;
-  cursor: pointer;
-}
-
-.card-title a {
-  color: #333;
-  cursor: pointer;
-  background-color: #fff;
-}
-
 .logo-left.logo a {
   color: #fff;
 }
@@ -112,23 +97,8 @@ a:hover {
   font-size: 22px;
 }
 
-.second-header a:hover,
-.who-to-follow li {
+.second-header a:hover {
   text-decoration: none;
-  background-color: #fff;
-}
-
-.who-to-follow a:hover,
-.trends a:hover,
-.followers a:hover {
-  background-color: #209cee;
-  color: #fff;
-  cursor: pointer;
-}
-
-.card-text a:hover {
-  color: #333;
-  cursor: pointer;
   background-color: #fff;
 }
 
@@ -232,16 +202,6 @@ a.list_group_item:hover {
   border-color: #209cee;
 }
 
-a.follow {
-  color: #fff;
-  background-color: #209cee;
-}
-
-a.follow:hover {
-  color: #fff;
-  background-color: #209cee;
-}
-
 .notice {
   color: green;
 }
@@ -282,8 +242,4 @@ a.back-link:hover {
 .show > .btn-primary.dropdown-toggle {
   background-color: #35465c;
   border-color: #35465c;
-}
-
-.thoughts {
-  margin-left: -135px;
 }
