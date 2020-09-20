@@ -21,5 +21,6 @@ RSpec.describe 'trends/index', type: :view do
 
   it 'renders a list of trends' do
     render
+    expect(response).to render_template('index')
   end
 end
