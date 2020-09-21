@@ -1,0 +1,16 @@
+<a href= '/thoughts'><i class="fas fa-pencil-alt pr-5 fa-lg nav-icons"></i></a>
+<a href= '/thoughts'><i class="fas fa-envelope pr-5 fa-lg nav-icons"></i></a>
+<a href= '/trends'><i class="fas fa-search pr-4 fa-lg nav-icons"></i></a>
+<div class="dropdown pr-5">
+  <button type="button" class="btn btn-primary dropdown-toggle nav-icons" data-toggle="dropdown">
+    <i class="fas fa-cog fa-lg"></i>
+  </button>
+  <ul class="dropdown-menu">
+    <li class = "list-group-item  border-top-0">
+      <%= link_to current_user.username, user_path(current_user.id) %>
+    </li>
+    <li class = "list-group-item border border-bottom-0">
+      <%= link_to "Logout", sign_out_path, method: :delete %>
+    </li>
+  </ul>
+</div>

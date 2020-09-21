@@ -1,0 +1,24 @@
+<div class="row mt-5 pt-5 pr-n3 ">
+  <div class="col-9">
+    <% if flash[:notice] %>
+      <p class="notice" > <%= flash[:notice] %> </p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"> <%= flash[:alert] %> </p>
+    <% end %>
+    <%= render 'layouts/header' %>
+    <%= form_for(thought) do |form| %>
+      <%= form.label :share_an_idea %>
+      <%= form.text_field :text, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+      <%= retrieve_errors thought %>
+      <br>
+      <%= form.submit 'Save', class: 'btn btn-primary' %>
+      <br>
+      <br>
+    <% end %>
+    <%= render 'users/thoughts' %>
+  </div>
+  <div class="col-3">
+    <%= render 'layouts/who_to_follow'%>
+  </div>
+</div>

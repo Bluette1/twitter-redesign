@@ -1,0 +1,245 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.image {
+  border-radius: 50%;
+}
+
+.image img {
+  border-radius: 50%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+p,
+ol,
+ul,
+td {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+* {
+  border: 0 none;
+  padding: 0;
+  list-style: none outside none;
+  margin: 0;
+  outline: 0 none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(247, 242, 242);
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  line-height: 20px;
+  overflow-x: hidden;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: #209cee;
+  color: #fff;
+}
+
+.page-header {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.page-header .logo-left.logo {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.second-header a {
+  color: #333;
+}
+
+.logo-left.logo a {
+  color: #fff;
+}
+
+.page-header li {
+  font-size: 22px;
+}
+
+.second-header a:hover {
+  text-decoration: none;
+  background-color: #fff;
+}
+
+li.item_color:hover,
+.item_color a:hover {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.page-header .dropdown-menu a {
+  color: #333;
+  font-size: 13px;
+}
+
+.page-header.right-section ul li a,
+.page-header .logo-left .logo {
+  cursor: pointer;
+}
+
+li a.sign-in-options {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.post {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.page-header .center-items ul li,
+.page-header .right-section ul li {
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.dark_blue {
+  position: sticky;
+  z-index: 1000;
+  background-color: #35465c;
+  min-height: max-content;
+  height: 150vh;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 233px;
+  z-index: 1030;
+}
+
+main {
+  margin-left: 20px;
+}
+
+.item_color {
+  background-color: #35465c;
+  color: #7389a5;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.item-text {
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.list_group_item:hover {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.list-group {
+  margin-right: -0.9rem;
+  padding-top: 87.5px;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #209cee;
+  border-color: #209cee;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #209cee;
+  border-color: #209cee;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: #f00;
+}
+
+a.trends {
+  color: #333;
+}
+
+a.back-link {
+  color: #333;
+}
+
+a.back-link:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+.page-header .dropdown-menu a:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+.nav-icons {
+  cursor: pointer;
+  color: #35465c;
+}
+
+.nav-icons:hover {
+  cursor: pointer;
+  background-color: #209cee;
+  color: #fff;
+}
+
+.show > .btn-primary.dropdown-toggle {
+  background-color: #35465c;
+  border-color: #35465c;
+}

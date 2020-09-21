@@ -1,0 +1,14 @@
+<% @bookmarks.each do |bookmark| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= author_username bookmark %>
+        <%= author_full_name bookmark %>
+      </h5>
+      <p class="card-text">
+        <%= thought_text bookmark %><br>
+        <%= unbookmark_btn bookmark %>
+      </p>
+    </div>
+  </div>
+<% end %>

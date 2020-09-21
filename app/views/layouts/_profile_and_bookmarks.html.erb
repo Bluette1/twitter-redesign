@@ -1,0 +1,8 @@
+<li class='d-inline-flex align-items-center list-group-item item_color'>
+<a><i class="fas fa-user pt-2 pr-3"></i></a>
+<%= link_to "PROFILE", user_path(current_user.id), class: "item-text" %>
+</li>
+<li class='d-inline-flex align-items-center list-group-item item_color'>
+<a><i class="fas fa-bookmark pt-2 pr-3"></i></a>
+<%= link_to "BOOKMARKS", user_bookmarks_path(current_user.id), class: "item-text" %>
+</li>

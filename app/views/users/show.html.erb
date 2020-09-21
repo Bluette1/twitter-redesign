@@ -1,0 +1,35 @@
+<div class="row mt-5 pt-5 pr-n3 ">
+  <div class="col-9">
+    <% if flash[:notice] %>
+      <p class="notice" > <%= flash[:notice] %> </p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"> <%= flash[:alert] %> </p>
+    <% end %>
+    <div class="cover_image" >
+      <%= image_tag cover_image, height: 350, class: "w-100" %>
+    </div>
+    <%= render 'layouts/header' %>
+    <%= render 'users/thoughts' %>
+  </div>
+  <div class="col-3">
+    <div class="d-flex justify-content-between">
+      <div class='image pt-4'>
+        <%= image_tag(retrieve_image, size: 100, alt: username) %>
+      </div>
+      <div class="pt-5 follow">
+        <%= follow_or_unfollow_btn %>
+      </div>
+    </div>
+    <%= username %><br/>
+    <%= full_name %><br/>
+    <br/>
+    <p>
+      <%= followers_and_following_count %>
+    </p>
+    <ul class="followers list-group pr-0 pt-3">
+      <li class="pt-3 pb-3 list-group-item text-uppercase h5">Followers</li>
+      <%= render 'followers' %>
+    </ul>
+  </div>
+</div>

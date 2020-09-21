@@ -1,0 +1,9 @@
+<div class="mt-5 pt-5">
+<% if flash[:notice] %>
+  <p class="notice" > <%= flash[:notice] %> </p>
+<% end %>
+  <h5 class='title'>Sign In</h5>
+   <br/>
+  <%= render 'form'%>
+</div>
+
