@@ -71,6 +71,7 @@ Make sure the server is running
    - http://localhost:3000/thoughts/:id
    - http://localhost:3000/users/:id
    - http://localhost:3000/users/:user_id/bookmarks
+   - http://localhost:3000/trends
    
 - Follow the links on the site to access the available features, including sign up and sign in functionality.
 #### Available features
@@ -82,6 +83,7 @@ Make sure the server is running
    - bookmark another user's thought(s) on their *home page*
    - bookmark another user's thought(s) on their *user profile page*
    - remove a bookmark from their bookmarks page
+   - access the latest news in technology on the trends page
 
 ### Deployment
 - You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
@@ -105,6 +107,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - [Twitter - Redesign of UI details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+- [IconArchive](https://iconarchive.com/show/papirus-status-icons-by-papirus-team/avatar-default-icon.html)
 
 
 ## 📝 License
