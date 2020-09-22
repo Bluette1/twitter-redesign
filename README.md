@@ -108,6 +108,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 - [Twitter - Redesign of UI details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
 - [IconArchive](https://iconarchive.com/show/papirus-status-icons-by-papirus-team/avatar-default-icon.html)
+- [Unsplash Photos for everyone](https://unsplash.com/)
 
 
 ## 📝 License
