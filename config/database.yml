@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: thoughtstar_production
-  username: thoughtstar
+  database: thoughtstar
+  username: deploy
   password: <%= ENV['THOUGHTSTAR_DATABASE_PASSWORD'] %>
