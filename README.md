@@ -17,7 +17,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 
 ## Live Demo
 
-[Click here](https://thoughtstar-app.herokuapp.com/)
+[Click here](http://102.220.85.218/)
 
 
 ## Getting Started
@@ -86,7 +86,12 @@ Make sure the server is running
    - access the latest news in technology on the trends page
 
 ### Deployment
-- You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
+- You can deploy on
+ - [Heroku](https://devcenter.heroku.com/categories/ruby-support).
+ - [Cloud server using Capistrano](https://gorails.com/deploy/ubuntu/18.04)
+
+     #### Capistrano Logging Command:
+         `tail -f blogger/shared/log/production.log`
 
 ## Authors
 
