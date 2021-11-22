@@ -11,8 +11,8 @@ class Feeder
       'https://www.techmeme.com/feed.xml',
       'http://feeds.arstechnica.com/arstechnica/index/',
       'https://www.engadget.com/rss.xml',
-      'https://www.technewsworld.com/perl/syndication/rssfull.pl',
-      'https://techcrunch.com/feed/'
+      'https://techcrunch.com/feed/',
+      'https://www.engadget.com/rss.xml'
     ]
   end
 
@@ -26,7 +26,7 @@ class Feeder
     @urls.each do |url|
       news = {}
       URI.parse(url).open do |rss|
-        feed = RSS::Parser.parse(rss)
+        feed = RSS::Parser.parse(rss, false)
         channel = feed.channel.title
         feed.items.each do |item|
           title = item.title
