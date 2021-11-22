@@ -12,7 +12,7 @@ class Feeder
       'http://feeds.arstechnica.com/arstechnica/index/',
       'https://www.engadget.com/rss.xml',
       'https://techcrunch.com/feed/',
-      'https://www.engadget.com/rss.xml',
+      'https://www.engadget.com/rss.xml'
     ]
   end
 
