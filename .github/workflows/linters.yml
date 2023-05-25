@@ -18,13 +18,16 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-          run: >
-            gem install --no-document rubocop:'~>0.81.0' #
-            https://docs.rubocop.org/en/stable/installation/
+      - run: >
+          gem install --no-document rubocop:'~>0.81.0' #
 
-            [ -f .rubocop.yml ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ror/.rubocop.yml
+          https://docs.rubocop.org/en/stable/installation/
 
-            rubocop --color
+
+          [ -f .rubocop.yml ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ror/.rubocop.yml
+
+
+          rubocop --color
   stylelint:
     name: Stylelint
     runs-on: ubuntu-20.04
