@@ -9,7 +9,7 @@ RSpec.describe ThoughtsController, type: :controller do
   end
   describe 'POST create ' do
     let(:thought) { { text: 'text', author_id: @author_id } }
-    subject { post :create, params: { thought: thought } }
+    subject { post :create, params: { thought: } }
 
     it 'redirects to the action show' do
       expect(subject).to redirect_to(thoughts_url)
@@ -19,7 +19,7 @@ RSpec.describe ThoughtsController, type: :controller do
     end
 
     it 'sets the correct flash notice' do
-      post :create, params: { thought: thought }
+      post :create, params: { thought: }
       expect(response.code).to eq '302'
       expect(response).to have_http_status(:found)
       expect(flash[:notice]).to eq 'Thought was successfully created.'

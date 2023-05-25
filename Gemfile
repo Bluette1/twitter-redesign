@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.1.2"
+ruby '~> 3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
+gem 'kt-paperclip', '~> 6.4', '>= 6.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,7 +67,8 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'bundler', '2.1.4'
 gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'psych', '< 4'
-gem 'bundler', '2.1.4'
 gem 'rss', '~> 0.2.9'
+gem 'rubocop'

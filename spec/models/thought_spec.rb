@@ -6,7 +6,7 @@ RSpec.describe Thought, type: :model do
       User.create(username: 'author', full_name: 'Good Author')
     end
     let(:subject) do
-      described_class.new(text: 'some text', author: author)
+      described_class.new(text: 'some text', author:)
     end
     it 'is not valid without a user' do
       subject.author = nil
