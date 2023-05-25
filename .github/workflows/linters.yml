@@ -19,14 +19,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
       - run: >
-          gem install --no-document rubocop:'~>0.81.0' #
-
-          https://docs.rubocop.org/en/stable/installation/
-
-
+          gem install --no-document rubocop:'~>0.81.0' 
           [ -f .rubocop.yml ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ror/.rubocop.yml
-
-
           rubocop --color
   stylelint:
     name: Stylelint
