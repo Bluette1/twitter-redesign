@@ -10,7 +10,7 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 3.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'paperclip'
+gem 'kt-paperclip', '~> 6.4', '>= 6.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,4 +65,8 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'bundler', '2.1.4'
 gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'psych', '< 4'
+gem 'rss', '~> 0.2.9'
+gem 'rubocop'

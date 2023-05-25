@@ -17,7 +17,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 
 ## Live Demo
 
-[Click here](http://102.220.85.218/)
+[Click here](https://thoughtstar.fly.dev)
 
 
 ## Getting Started
@@ -26,8 +26,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
+Ruby: 3.1.2
+Rails: 6.0.3
 Postgres: >= 9.5
 
 ### Setup

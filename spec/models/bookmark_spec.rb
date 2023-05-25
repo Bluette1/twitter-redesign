@@ -9,7 +9,7 @@ RSpec.describe Bookmark, type: :model do
       User.create(username: 'author', full_name: 'Good Author')
     end
     let(:thought) do
-      Thought.create(text: 'some text', author: author)
+      Thought.create(text: 'some text', author:)
     end
 
     subject do

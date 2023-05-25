@@ -24,7 +24,7 @@ RSpec.describe '/thoughts', type: :request do
   describe 'GET /index' do
     let(:author) { User.find_by(username: mary[:username]) }
     let(:valid_attributes) do
-      { text: 'some text', author: author }
+      { text: 'some text', author: }
     end
     it 'renders a successful response' do
       Thought.create! valid_attributes
@@ -36,7 +36,7 @@ RSpec.describe '/thoughts', type: :request do
   describe 'POST /create' do
     let(:author) { User.find_by(username: mary[:username]) }
     let(:valid_attributes) do
-      { text: 'some text', author: author }
+      { text: 'some text', author: }
     end
 
     context 'with valid parameters' do
@@ -55,7 +55,7 @@ RSpec.describe '/thoughts', type: :request do
     context 'with invalid parameters' do
       let(:author) { User.find_by(username: mary[:username]) }
       let(:invalid_attributes) do
-        { text: '', author: author }
+        { text: '', author: }
       end
       it 'does not create a new Thought' do
         expect do

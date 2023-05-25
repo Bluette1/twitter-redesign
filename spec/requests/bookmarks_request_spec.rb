@@ -19,10 +19,10 @@ RSpec.describe 'Bookmarks', type: :request do
       User.create! jane
     end
     let(:thought) do
-      Thought.create!({ text: 'some text', author: author })
+      Thought.create!({ text: 'some text', author: })
     end
     let(:valid_attributes) do
-      { user_id: user.id, thought: thought }
+      { user_id: user.id, thought: }
     end
 
     it 'renders a successful response' do
@@ -38,7 +38,7 @@ RSpec.describe 'Bookmarks', type: :request do
       User.create! jane
     end
     let(:thought) do
-      Thought.create({ text: 'some text', author: author })
+      Thought.create({ text: 'some text', author: })
     end
 
     context 'with valid parameters' do
@@ -60,7 +60,7 @@ RSpec.describe 'Bookmarks', type: :request do
         User.create! jane
       end
       let(:thought) do
-        Thought.create({ text: 'some text', author: author })
+        Thought.create({ text: 'some text', author: })
       end
 
       it 'does not create a new Bookmark' do

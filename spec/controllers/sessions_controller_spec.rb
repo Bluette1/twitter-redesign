@@ -10,7 +10,7 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it 'logs in successfully and redirects to the show' do
-      post :create, params: params
+      post(:create, params:)
 
       expect(response).to redirect_to(user_url(assigns(:user).id))
       expect(response).to redirect_to("/users/#{assigns(:user).id}")
@@ -31,10 +31,10 @@ RSpec.describe SessionsController, type: :controller do
     before :each do
       User.create(params)
     end
-    subject { post :create, params: params }
+    subject { post :create, params: }
 
     it 'successfully logs out user' do
-      post :destroy, params: params
+      post(:destroy, params:)
       expect(flash[:notice]).to eq 'You have successfully logged out.'
     end
   end

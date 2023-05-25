@@ -3,7 +3,7 @@
     "private": true,
     "scripts": {
         "stylelint-fix": "npx stylelint --fix '**/*.{css,scss}'",
-        "rubocop-fix": "rubocop --except Style/FrozenStringLiteralComment -a"
+        "rubocop-fix": "bundle exec rubocop --except Style/FrozenStringLiteralComment -a"
     },
     "dependencies": {
         "@rails/actioncable": "^6.0.0",
