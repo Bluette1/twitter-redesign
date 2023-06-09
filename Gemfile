@@ -70,3 +70,6 @@ gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'psych', '< 4'
 gem 'rss', '~> 0.2.9'
 gem 'rubocop'
+gem 'aws-sdk', '~> 3'
+gem 'dotenv-rails', groups: %i[development test]
+
