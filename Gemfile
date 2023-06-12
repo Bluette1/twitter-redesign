@@ -64,8 +64,10 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
+gem 'aws-sdk', '~> 3'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'bundler', '2.1.4'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'psych', '< 4'
 gem 'rss', '~> 0.2.9'

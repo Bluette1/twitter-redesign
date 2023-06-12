@@ -7,8 +7,12 @@ module ApplicationHelper
     @current_user
   end
 
-  def not_bookmarked(thought)
-    current_user.not_bookmarked?(thought)
+  def bookmarked?(thought)
+    current_user.bookmarked?(thought)
+  end
+
+  def get_bookmark(thought)
+    current_user.get_bookmark(thought)
   end
 
   def following?
@@ -51,12 +55,22 @@ module ApplicationHelper
     user.id
   end
 
-  def bookmark_btn(thought)
-    show_bookmark_btn thought if not_bookmarked(thought) && current_user != author(thought)
+  def bkmark_btn(thought)
+    show_bookmark_btn thought if !bookmarked?(thought) && current_user != author(thought)
   end
 
   def show_bookmark_btn(thought)
     button_to '+/bookmark', thought_bookmarks_path(thought.id), method: :post, class: 'btn btn-primary', type: 'submit'
+  end
+
+  def unbkmark_btn(thought)
+    show_unbookmark_btn thought if bookmarked?(thought) && current_user != author(thought)
+  end
+
+  def show_unbookmark_btn(thought)
+    bookmark = get_bookmark(thought)
+    button_to '-/bookmark', user_bookmark_path(current_user.id, bookmark.id), method: :delete,
+                                                                              class: 'btn btn-primary', type: 'submit'
   end
 
   def author(thought)

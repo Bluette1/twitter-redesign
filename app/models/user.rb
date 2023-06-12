@@ -22,8 +22,12 @@ class User < ApplicationRecord
     User.ordered_by_most_recent.reject { |user| followed_users.include?(user) || user == self }
   end
 
-  def not_bookmarked?(thought)
-    !bookmarks.include?(thought)
+  def bookmarked?(thought)
+    bookmarks.to_ary.intersect?(thought.bookmarks.to_ary)
+  end
+
+  def get_bookmark(thought)
+    bookmarks.to_ary.intersection(thought.bookmarks.to_ary)[0]
   end
 
   def following?(user)

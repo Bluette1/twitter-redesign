@@ -92,6 +92,7 @@ Make sure the server is running
 
      #### Capistrano Logging Command:
          `tail -f blogger/shared/log/production.log`
+-  [Fly.io](https://fly.io/docs/rails/getting-started/existing/)
 
 ## Authors
 
