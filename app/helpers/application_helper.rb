@@ -8,6 +8,8 @@ module ApplicationHelper
   end
 
   def bookmarked?(thought)
+    return if current_user.nil?
+
     current_user.bookmarked?(thought)
   end
 

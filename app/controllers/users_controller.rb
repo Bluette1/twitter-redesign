@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @thoughts = @user.thoughts
+    # return if @current_user.nil?
+
     @followers = @user.followers
     @followers_count = @user.followers.count
     @following_count = @user.followed_users.count
@@ -41,25 +43,24 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    if current_user
+    # if current_user
 
-      begin
-        @user = User.find(params[:id])
-      rescue StandardError => e
-        flash[:alert] = e.to_s
-        redirect_to root_path
-      end
-    else
-      session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-      redirect_to sign_in_path
-    end
+    @user = User.find(params[:id])
+  rescue StandardError => e
+    flash[:alert] = e.to_s
+    redirect_to root_path
+
+    # else
+    # session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
+    # redirect_to sign_in_path
+    # end
   end
 
   def set_current_user
-    if current_user.nil?
-      session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-      redirect_to sign_in_path
-    end
+    # if current_user.nil?
+    #   session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
+    #   redirect_to sign_in_path
+    # end
     @current_user = current_user
   end
 

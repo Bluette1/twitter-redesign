@@ -2,12 +2,16 @@
 
 class TrendsController < ApplicationController
   include TrendsHelper
-  before_action :set_current_user, only: %i[index]
+  # before_action :set_current_user, only: %i[index]
 
   # GET /trends
   def index
     @trends = trends
-    @who_to_follow = @current_user.not_followed
+    @who_to_follow = if @current_user.nil?
+                       User.all.first(5)
+                     else
+                       @current_user.not_followed
+                     end
   end
 end
 
