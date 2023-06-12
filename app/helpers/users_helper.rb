@@ -13,10 +13,10 @@ module UsersHelper
         follow_btn
       elsif following?
         following_id = following_id user
-        unfollow_btn following_id
+        return unfollow_btn following_id
       end
     end
-    follow_btn
+    follow_btn unless current_user == user
   end
 
   def username
