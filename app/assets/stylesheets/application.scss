@@ -203,7 +203,7 @@ a.list_group_item:hover {
 }
 
 .notice {
-  color: green;
+  color: rgb(9, 12, 71);
 }
 
 .alert {
@@ -242,4 +242,12 @@ a.back-link:hover {
 .show > .btn-primary.dropdown-toggle {
   background-color: #35465c;
   border-color: #35465c;
+}
+
+input[type=submit] {
+  background-color: #209cee;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
 }

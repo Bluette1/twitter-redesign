@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to path_url, notice: 'You have successfully logged in'
 
     else
-      flash[:alert] = 'Wrong name. Sign up or enter the correct name'
+      flash[:notice] = 'Wrong name. Sign up or enter the correct name'
       render :new
     end
   end
