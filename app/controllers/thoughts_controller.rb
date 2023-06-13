@@ -4,13 +4,20 @@ class ThoughtsController < ApplicationController
 
   def index
     @thought = Thought.new
+    all_thoughts = Thought.all
     if current_user.nil?
-      @thoughts = Thought.all
+      @thoughts = all_thoughts
       @who_to_follow = User.all.first(5)
+      @who_to_follow_detail = @thoughts
     else
       @thoughts = @current_user.followed_users_and_own_thoughts
       @who_to_follow = @current_user.not_followed
+      @who_to_follow_detail = []
+      all_thoughts.each do |thought|
+        @who_to_follow_detail << thought if @who_to_follow.include?(thought.author)
+      end
     end
+
     @trends = trends
   end
 
