@@ -5,7 +5,7 @@ class ThoughtsController < ApplicationController
     @thought = Thought.new
     if current_user.nil?
       @thoughts = Thought.all
-      @who_to_follow = User.all.first(2)
+      @who_to_follow = User.all.first(5)
     else
       @thoughts = @current_user.followed_users_and_own_thoughts
       @who_to_follow = @current_user.not_followed
