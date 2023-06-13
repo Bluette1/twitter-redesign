@@ -1,16 +1,17 @@
 class ThoughtsController < ApplicationController
-  before_action :set_current_user, only: %i[index create]
+  before_action :set_current_user, only: %i[create]
 
-  # GET /thoughts
-  # GET /thoughts.json
   def index
     @thought = Thought.new
-    @thoughts = @current_user.followed_users_and_own_thoughts
-    @who_to_follow = @current_user.not_followed
+    if current_user.nil?
+      @thoughts = Thought.all
+      @who_to_follow = User.all.first(2)
+    else
+      @thoughts = @current_user.followed_users_and_own_thoughts
+      @who_to_follow = @current_user.not_followed
+    end
   end
 
-  # POST /thoughts
-  # POST /thoughts.json
   def create
     @thought = @current_user.thoughts.build(thought_params)
 
@@ -23,7 +24,6 @@ class ThoughtsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_thought
     @thought = Thought.find(params[:id])
   end
@@ -32,11 +32,11 @@ class ThoughtsController < ApplicationController
     if current_user.nil?
       session[:previous_url] = request.fullpath
       redirect_to sign_in_path
+    else
+      @current_user = current_user
     end
-    @current_user = current_user
   end
 
-  # Only allow a list of trusted parameters through.
   def thought_params
     params.require(:thought).permit(:text, :author_id)
   end
