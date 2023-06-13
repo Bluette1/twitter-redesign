@@ -8,14 +8,11 @@ class ThoughtsController < ApplicationController
     if current_user.nil?
       @thoughts = all_thoughts
       @who_to_follow = User.all.first(5)
-      @who_to_follow_detail = @thoughts
+      who_to_follow_detail_not_loggedin
     else
       @thoughts = @current_user.followed_users_and_own_thoughts
       @who_to_follow = @current_user.not_followed
-      @who_to_follow_detail = []
-      all_thoughts.each do |thought|
-        @who_to_follow_detail << thought if @who_to_follow.include?(thought.author)
-      end
+      who_to_follow_detail_loggedin
     end
 
     @trends = trends
@@ -48,5 +45,23 @@ class ThoughtsController < ApplicationController
 
   def thought_params
     params.require(:thought).permit(:text, :author_id)
+  end
+
+  def who_to_follow_detail_not_loggedin
+    @who_to_follow_detail = []
+    authors = []
+    @thoughts.each do |thought|
+      @who_to_follow_detail << thought unless authors.include?(thought.author)
+      authors << thought.author unless authors.include?(thought.author)
+    end
+  end
+
+  def who_to_follow_detail_loggedin
+    @who_to_follow_detail = []
+    authors = []
+    all_thoughts.each do |thought|
+      @who_to_follow_detail << thought if @who_to_follow.include?(thought.author) && !authors.include?(thought.author)
+      authors << thought.author unless authors.include?(thought.author)
+    end
   end
 end
