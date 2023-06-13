@@ -10,8 +10,6 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @thoughts = @user.thoughts
-    # return if @current_user.nil?
-
     @followers = @user.followers
     @followers_count = @user.followers.count
     @following_count = @user.followed_users.count
@@ -21,12 +19,9 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  # GET /users/1/edit
+  
   def edit; end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -49,18 +44,9 @@ class UsersController < ApplicationController
   rescue StandardError => e
     flash[:alert] = e.to_s
     redirect_to root_path
-
-    # else
-    # session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-    # redirect_to sign_in_path
-    # end
   end
 
   def set_current_user
-    # if current_user.nil?
-    #   session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-    #   redirect_to sign_in_path
-    # end
     @current_user = current_user
   end
 
