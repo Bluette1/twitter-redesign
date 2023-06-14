@@ -4,9 +4,9 @@ class ThoughtsController < ApplicationController
 
   def index
     @thought = Thought.new
-    all_thoughts = Thought.all
+    @all_thoughts = Thought.all
     if current_user.nil?
-      @thoughts = all_thoughts
+      @thoughts = @all_thoughts
       @who_to_follow = User.all.first(5)
       who_to_follow_detail_not_loggedin
     else
@@ -59,7 +59,7 @@ class ThoughtsController < ApplicationController
   def who_to_follow_detail_loggedin
     @who_to_follow_detail = []
     authors = []
-    all_thoughts.each do |thought|
+    @all_thoughts.each do |thought|
       @who_to_follow_detail << thought if @who_to_follow.include?(thought.author) && !authors.include?(thought.author)
       authors << thought.author unless authors.include?(thought.author)
     end
