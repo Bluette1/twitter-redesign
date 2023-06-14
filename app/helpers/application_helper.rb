@@ -1,13 +1,16 @@
 module ApplicationHelper
   def user_signed_in?
-    @current_user
+    !current_user.nil?
   end
 
   def current_user
-    @current_user
+    @current_user ||= session[:current_user_id] &&
+                      User.find_by(id: session[:current_user_id])
   end
 
   def bookmarked?(thought)
+    return if current_user.nil?
+
     current_user.bookmarked?(thought)
   end
 

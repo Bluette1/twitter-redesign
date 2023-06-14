@@ -13,8 +13,8 @@ module BookmarksHelper
   end
 
   def unbookmark_btn(bookmark)
-    button_to '-/unbookmark', user_bookmark_path(current_user.id,
-                                                 bookmark.id), method: :delete, class: 'btn btn-primary', type: 'submit'
+    button_to '-/bookmark', user_bookmark_path(current_user.id,
+                                               bookmark.id), method: :delete, class: 'btn btn-primary', type: 'submit'
   end
 
   def trends

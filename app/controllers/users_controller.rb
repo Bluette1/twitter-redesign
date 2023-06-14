@@ -20,11 +20,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit; end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -41,25 +38,15 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    if current_user
+    # if current_user
 
-      begin
-        @user = User.find(params[:id])
-      rescue StandardError => e
-        flash[:alert] = e.to_s
-        redirect_to root_path
-      end
-    else
-      session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-      redirect_to sign_in_path
-    end
+    @user = User.find(params[:id])
+  rescue StandardError => e
+    flash[:alert] = e.to_s
+    redirect_to root_path
   end
 
   def set_current_user
-    if current_user.nil?
-      session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
-      redirect_to sign_in_path
-    end
     @current_user = current_user
   end
 

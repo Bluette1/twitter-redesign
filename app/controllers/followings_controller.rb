@@ -38,8 +38,9 @@ end
 
 def set_current_user
   if current_user.nil?
-    session[:previous_url] = request.fullpath unless request.fullpath =~ Regexp.new('/user/')
+    session[:previous_url] = "/users/#{params[:user_id]}"
     redirect_to sign_in_path
+  else
+    @current_user = current_user
   end
-  @current_user = current_user
 end

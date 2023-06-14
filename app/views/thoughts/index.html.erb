@@ -18,7 +18,15 @@
     <% end %>
     <%= render 'users/thoughts' %>
   </div>
-  <div class="col-3">
+    <div class="col-3">
+    <h5>TRENDS FOR YOU</h5>
+    <%= render 'trends' %>
+  </div>
+  <div class="col-9">
+  <h5>WHO TO FOLLOW</h5>
+    <%= render 'layouts/who_to_follow_detail' %>
+  </div>
+    <div class="col-3">
     <%= render 'layouts/who_to_follow'%>
   </div>
 </div>

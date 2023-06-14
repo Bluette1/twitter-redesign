@@ -8,12 +8,15 @@ module UsersHelper
   end
 
   def follow_or_unfollow_btn
-    if current_user != user && !following?
-      follow_btn
-    elsif following?
-      following_id = following_id user
-      unfollow_btn following_id
+    unless current_user.nil?
+      if current_user != user && !following?
+        follow_btn
+      elsif following?
+        following_id = following_id user
+        return unfollow_btn following_id
+      end
     end
+    follow_btn unless current_user == user
   end
 
   def username
