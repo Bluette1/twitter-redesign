@@ -1,5 +1,5 @@
 <div class="row mt-5 pt-5 pr-n3 ">
-  <div class="col-9">
+  <div class="col-12 col-lg-9">
     <% if flash[:notice] %>
       <p class="notice" > <%= flash[:notice] %> </p>
     <% end %>
@@ -12,7 +12,7 @@
     <%= render 'layouts/header' %>
     <%= render 'users/thoughts' %>
   </div>
-  <div class="col-3">
+  <div class="col-12 col-lg-3">
     <div class="d-flex justify-content-between">
       <div class='image pt-4'>
         <%= image_tag(retrieve_image, size: 100, alt: username) %>

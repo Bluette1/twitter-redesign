@@ -1,9 +1,9 @@
 <% @who_to_follow_detail.each do |thought| %>
   <div class="row usr-row">
-    <div class="image col-3">
+    <div class="image col-5 col-lg-3">
       <%= image_tag(user_or_author_img(thought), size: 64) %>
     </div>
-    <div class="card thoughts col-9">
+    <div class="card thoughts col-7 col-lg-9">
       <div class="card-body">
         <h5 class="card-title">
           <%= user_or_author_details thought %>
