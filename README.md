@@ -6,7 +6,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 ![demopage](./app/assets/images/screenshot.png)
 ## Built With
 
-- Ruby v2.6.5
+- Ruby v3.1.2
 - Ruby on Rails v5.2.4
 
 ## Description
