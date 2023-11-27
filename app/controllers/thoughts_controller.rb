@@ -1,7 +1,5 @@
 class ThoughtsController < ApplicationController
   before_action :set_current_user, only: %i[create]
-  include TrendsHelper
-
   def index
     @thought = Thought.new
     @all_thoughts = Thought.all

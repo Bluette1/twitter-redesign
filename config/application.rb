@@ -24,6 +24,11 @@ module Thoughtstar
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+      # config.cache_store = :redis_cache_store, { url: 'redis://localhost:6379/0' }
+  config.cache_store = :redis_cache_store, { driver: :hiredis, url: 'redis://127.0.0.1:6379/0/cache' }
+
+  config.action_controller.perform_caching = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

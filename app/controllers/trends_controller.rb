@@ -1,6 +1,6 @@
-class TrendsController < ApplicationController
-  include TrendsHelper
+require 'json'
 
+class TrendsController < ApplicationController
   def index
     @trends = trends
     @who_to_follow = if @current_user.nil?
