@@ -1,6 +1,10 @@
 class ThoughtsController < ApplicationController
+  include TrendsHelper
+
   before_action :set_current_user, only: %i[create]
   def index
+    @trends = trends
+
     @thought = Thought.new
     @all_thoughts = Thought.all
     if current_user.nil?
@@ -13,7 +17,6 @@ class ThoughtsController < ApplicationController
       who_to_follow_detail_loggedin
     end
 
-    @trends = trends
   end
 
   def create
