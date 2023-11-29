@@ -17,7 +17,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 
 ## Live Demo
 
-[Click here](https://thoughtstar.fly.dev)
+[Click here](https://twitter-redesign-705e6bd896b1.herokuapp.com/)
 
 
 ## Getting Started

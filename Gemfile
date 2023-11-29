@@ -79,3 +79,4 @@ gem 'rss', '~> 0.2.9'
 gem 'rubocop'
 
 gem 'whenever', require: false
+ruby '3.1.2'
