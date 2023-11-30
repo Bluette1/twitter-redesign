@@ -16,7 +16,6 @@ class ThoughtsController < ApplicationController
       @who_to_follow = @current_user.not_followed
       who_to_follow_detail_loggedin
     end
-
   end
 
   def create
