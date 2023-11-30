@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.hours do
+every 2.hours do
     rake 'repeat:fetch_trends'
-  end
+end
   
