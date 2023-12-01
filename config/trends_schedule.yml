@@ -1,0 +1,5 @@
+update_trends_job:
+  cron: "every 2 hours" 
+  class: "TrendsWorker"
+  args: []
+
