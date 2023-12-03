@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if trends.nil?
       trends = Feeder.new.send_feed
       $redis.set('trends', trends.to_json)
-      $redis.expire('trends', 2.hour.to_i)
+      $redis.expire('trends', 5.day.to_i)
     else
       trends = JSON.parse trends
     end
