@@ -1,5 +1,5 @@
 update_trends_job:
-  cron: "every 2 hours" 
+  cron: "every 5 days" 
   class: "TrendsWorker"
   args: []
 
