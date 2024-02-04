@@ -1,4 +1,4 @@
-# thoughtstar
+# twitter-redesign
 ![CI Status Badge](https://github.com/Bluette1/thoughtstar/workflows/Linters/badge.svg)
 
 This is a capstone project at the end of the main Ruby on Rails curriculum at [Microverse](https:www.microverse.org/) - @microverseinc.
