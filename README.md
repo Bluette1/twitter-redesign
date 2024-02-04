@@ -6,7 +6,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 ![demopage](./app/assets/images/screenshot.png)
 ## Built With
 
-- Ruby v3.1.2
+- Ruby v3.1.4
 - Ruby on Rails v5.2.4
 
 ## Description
@@ -17,7 +17,7 @@ This is a capstone project at the end of the main Ruby on Rails curriculum at [M
 
 ## Live Demo
 
-[Click here](https://twitter-redesign-705e6bd896b1.herokuapp.com/)
+[Click here](https://x-redesign-2653ba8eb04d.herokuapp.com/)
 
 
 ## Getting Started
